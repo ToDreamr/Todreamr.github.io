@@ -1,0 +1,33 @@
+<div>
+  <iframe id="music" style="align-content: center;align-items: center" frameborder="no" border="0" marginwidth="0"
+          marginheight="0" width=200 height=86
+          src="//music.163.com/outchain/player?type=2&id=447925058&auto=1&height=66" ></iframe>
+  <button class="change-music" onclick="getMusicList()">下一曲</button>
+</div>
+
+<script>
+  //获取随机10首网易云歌曲
+  var MusicLists=[];
+  var musicUrl="";
+  function getMusicList()
+  {
+   MusicLists.push(29567192,1974443814,447926067,447925058);
+   var musicIndex=Math.floor(Math.random()*MusicLists.length+1);//随机挑选数组中的歌曲
+   //拼接url
+   musicUrl="https://music.163.com/outchain/player?type=2&id="+MusicLists[musicIndex]+"&auto=1&height=66";
+   var frame=document.getElementById("music");
+   frame.src=musicUrl;
+  }
+</script>
+
+<style>
+  .change-music{
+    margin-top: 20px;
+    width: 8%;
+    height: 50%;
+    font-family: 华文中宋,serif;
+    /*background-color: #6b7280;*/
+    /*border-radius: 7px;*/
+    /*box-shadow: 1px 1px 1px 1px gainsboro;*/
+  }
+</style>

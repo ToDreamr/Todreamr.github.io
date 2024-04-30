@@ -1,0 +1,28 @@
+languageCode = "zh-CN"
+languageName = "中文"
+weight = 1
+title = "春江花朝秋月夜"
+
+[params]
+    displayName = "中文"
+    isoCode = "zh-CN"
+    rtl = false
+    dateFormat = "2 January 2006"
+    logo = "img/author.png"
+#    secondaryLogo = "PATH"
+    description = "A powerful, lightweight theme for Hugo built with Tailwind CSS."
+#     copyright = "Copy, _right?_ :thinking_face:"
+
+[author]
+    name = "春江花朝秋月夜"
+    image = "img/三叶.png"
+    headline = "我一直在寻找着什么，寻找着某个人。"
+    bio = "重湖叠𪩘清嘉。有三秋桂子，十里荷花。羌管弄晴，菱歌泛夜，嬉嬉钓叟莲娃。千骑拥高牙。乘醉听箫鼓，吟赏烟霞。异日图将好景，归去凤池夸。"
+    links = [
+        { bilibili = "https://space.bilibili.com/159283119?spm_id_from=333.1007.0.0" },
+        { github = "https://github.com/ToDreamr" },
+        { wangyi = "https://music.163.com/#/user/home?id=568083850"},
+        { gitee = "https://gitee.com/rainyheights"},
+        { zhihu = "https://www.zhihu.com/people/san-qiu-luo-yue"},
+    ]
+
