@@ -21,6 +21,7 @@ title = "春江花朝秋月夜"
     links = [
         { bilibili = "https://space.bilibili.com/159283119?spm_id_from=333.1007.0.0" },
         { github = "https://github.com/ToDreamr" },
+        { email = "mailto:aruixrain@gmail.com" },
         { wangyi = "https://music.163.com/#/user/home?id=568083850"},
         { gitee = "https://gitee.com/rainyheights"},
         { zhihu = "https://www.zhihu.com/people/san-qiu-luo-yue"},
