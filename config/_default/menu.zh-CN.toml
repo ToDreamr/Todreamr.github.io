@@ -21,17 +21,17 @@ weight = 10
 #weight = 15
 
 [[main]]
-name = "全部✅"
+name = "全部"
 pageRef="all"
 weight = 20
 
 [[main]]
-name = "算法🐾"
+name = "算法"
 pageRef = "algorithm"
 weight = 30
 
 [[main]]
-name = "归类✈️"
+name = "归类"
 pageRef = "tags"
 weight = 32
 
@@ -41,9 +41,38 @@ pageRef = "friend"
 weight = 40
 
 [[main]]
-name = "文档😺"
-pageRef = "doc"
+name = "更多😺"
 weight = 40
+
+[[main]]
+parent = "更多😺"
+name = "电影🎥"
+pageRef = "media"
+weight = 41
+
+[[main]]
+parent = "更多😺"
+pageRef = "music"
+name = "音乐🎵"
+weight = 42
+
+[[main]]
+parent = "更多😺"
+pageRef = "life-about"
+name = "生活相关🌿"
+weight = 42
+
+[[main]]
+parent = "更多😺"
+pageRef = "笔记"
+name = "笔记(比较乱)🦐"
+weight = 43
+
+[[main]]
+parent = "更多😺"
+pageRef = "编程语言"
+name = "编程语言💻"
+weight = 44
 
 [[footer]]
 name = "系列文章"

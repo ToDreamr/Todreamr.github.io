@@ -87,12 +87,15 @@ spring: cloud: nacos: server-addr: localhost:8848 discovery: cluster-name: ClUST
     </item>
     
     <item>
-      <title>音乐</title>
-      <link>/entire-note/music/</link>
-      <pubDate>Mon, 29 Jan 2024 18:23:23 +0800</pubDate>
+      <title>Music</title>
+      <link>/entire-note/music_build/</link>
+      <pubDate>Wed, 07 Feb 2024 19:22:59 +0800</pubDate>
       
-      <guid>/entire-note/music/</guid>
-      <description></description>
+      <guid>/entire-note/music_build/</guid>
+      <description>搭建本站音乐 #搭建过程绕了一些弯子，吃了前端的亏，主要借鉴了金圣皓，得知了目前主流的博客音乐依托于APlayer&amp;amp;Meting JS,前者是嵌入HTML的音乐组件库，后者是可用通过网易，QQ音乐等网站的音乐插件，本网站作为静态页面，故只需通过CDN引入即可
+网站搭建主题为Blowfish，在blog/layouts/shortcodes文件夹下添加album.html文件
+这里采用的是网易音乐的歌单，获取歌单id自行从&lt;?xml version=&#34;1.0&#34; standalone=&#34;no&#34;?&gt;&lt;!DOCTYPE svg PUBLIC &#34;-//W3C//DTD SVG 1.1//EN&#34; &#34;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&#34;&gt;网易云音乐歌单中获取
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/color-thief@2.2.5/js/color-thief.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;span style=&amp;#34;color:#111827&amp;#34;&amp;gt; &amp;lt;!--{{.Get 0}}作为歌单参数由引用组件处添加--&amp;gt; &amp;lt;meting-js server=&amp;#34;netease&amp;#34; type=&amp;#34;playlist&amp;#34; id=&amp;#34;{{.</description>
       
     </item>
     

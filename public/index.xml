@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>© 2024 春江花朝秋月夜</copyright>
-    <lastBuildDate>Tue, 19 Mar 2024 17:31:54 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Apr 2024 16:17:35 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Help</title>
+      <link>/%E7%AC%94%E8%AE%B0/help/</link>
+      <pubDate>Tue, 30 Apr 2024 16:17:35 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/help/</guid>
+      <description>如何使用Hugo+Blowfish? #新建文章 #使用命令新建文章，新建文章生成在content目录下 将会使用archrtypes/default.md格式添加新文件头部配置键。
+PS D:\JavaWork\qvisl9.github.io&amp;gt; hugo new help/index.md Content &amp;#34;D:\\JavaWork\\qvisl9.github.io\\content\\help\\index.md&amp;#34; created PS D:\JavaWork\qvisl9.github.io&amp;gt; 分类 #blowfish的分类相对来说不是很完善效果如下：
+实现方式很简单，需在头部配置键中添加tags项
+就像这样子：
+主题将会识别配置键并自动检索所有带有此项的文章生成分类页面
+系列 #blowfish的是带有系列配置项的，效果如下：
+类似上述的操作，需要添加头部配置项：
+注意！！！请将文件命名为index.md，否则博客主题将无法自动为文章进行分类和添加相应的功能
+图标 #添加自己的图标和文章图片，放在assets目录下，icon作为 图标文件夹，添加相应图标后可显示对应的图片，如下：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/help/featured.png" />
+    </item>
+    
     <item>
       <title>代码随想录算法合辑</title>
       <link>/entire-note/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95-%E7%AE%97%E6%B3%95/</link>
@@ -37,6 +55,53 @@
       <guid>/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/sql-redis-db/</guid>
       <description>Redis详解 #1. Redis简介 #使用C语言开发的内存数据库，读写速度快，广泛用于缓存方向 可以用于分布式锁，甚至是消息队列 提供多种数据类型来支持不同的业务场景 支持事务、持久化、Lua脚本、多种集群方案 2. Redis 和 Memcached 对比 #2.1 相同点 #都基于内存，一般都是用来当缓存使用 都有过期策略 两者性能都非常高 2.2 区别 #Redis 支持更丰富的数据类型【key-value类型、提供l ist set zset hash等数据结构的存储】、更复杂的应用场景。Memcached只支持简单的 key-value 类型； Redis支持数据的持久化，有灾难恢复机制，Memcached不支持； Redis在服务器内存不足时，可以将不用的数据放到磁盘上；Memcached则直接报异常； Redis原生支持集群模式，Memcached原生不支持，需要依靠客户端实现往集群分片写入数据； Memcached是多线程的非阻塞IO复用的网络模型，Redis使用单线程的多路IO复用模型【6.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/sql-redis-db/featured.png" />
+    </item>
+    
+    <item>
+      <title>Mac体验版</title>
+      <link>/%E7%AC%94%E8%AE%B0/mac%E4%BD%93%E9%AA%8C%E7%89%88bushi/</link>
+      <pubDate>Thu, 14 Mar 2024 18:23:23 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/mac%E4%BD%93%E9%AA%8C%E7%89%88bushi/</guid>
+      <description>经过我的不懈努力，RedmiBook终于变成了Mac Book⬇️⬇️
+参考笔记 参考视频 #目前看起来还行：
+不得不说这个文件夹样式效果真好：
+偶尔出现卡顿，之后记录</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/mac%E4%BD%93%E9%AA%8C%E7%89%88bushi/featured.png" />
+    </item>
+    
+    <item>
+      <title>爬虫浅记</title>
+      <link>/%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Wed, 13 Mar 2024 18:23:23 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/</guid>
+      <description>目的：使用爬虫爬取都应指定视频下方的所有评论 #接电商小公司的面试需求
+参考视频
+知道了爬虫的基本原理是模仿正常用户的操作获取相关信息，下面是实际操作的记录
+过程：
+先是去抖音网站获取评论的api接口，拉取下来后使用ApiPost测试发现返回&amp;quot;block&amp;quot;阻塞信息 而后添加了相关请求头，发现加入User-Agent是关键信息 然而每次获取不同的视频发现有更改的参数：XBogus，这个参数是网站后台通过函数循环调用自己生成的（反爬） 遂通过浏览器断点调试最终追踪堆栈到生成函数： function _0x5a8f25(_0x48914f, _0xa771aa) { return (&amp;#39;undefined&amp;#39; == typeof window ? global : window)[&amp;#39;_$webrt_1668687510&amp;#39;](args) } 于是通过Node调试js文件，模拟循环过程生成参数 window = global; document = { refferer:&amp;#39;https://www.</description>
+      
+    </item>
+    
+    <item>
+      <title>Waline评论系统</title>
+      <link>/%E7%AC%94%E8%AE%B0/%E6%80%8E%E4%B9%88%E8%AF%84%E8%AE%BA/</link>
+      <pubDate>Mon, 11 Mar 2024 18:23:23 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/%E6%80%8E%E4%B9%88%E8%AF%84%E8%AE%BA/</guid>
+      <description>Waline博客网站评论 #注册账号 #注册账号✈️
+创建应用✈️
+创建仓库-》用于存放评论
+创建好之后，去到settings里面修改Environment三个参数
+LEAN_ID：AppId LEAN_KEY：App_key LEAN_MASTER_KEY：Master_KEY
+添加好之后，刷新工作流
+通过HTML部署
+导入样式文件和js脚本文件
+通过Waline的配置键添加自定义的东西
+注：借鉴自金圣浩
+&amp;lt;br/&amp;gt; &amp;lt;span style=&amp;#34;color:rgba(var(--color-neutral-400),var(--tw-text-opacity));&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;post-meta-item-text&amp;#34; &amp;gt;&amp;amp;nbsp;&amp;amp;nbsp;{{i18n &amp;#34;article.page_views&amp;#34;}}: &amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;waline-pageview-count&amp;#34;&amp;gt;⏳&amp;lt;/span&amp;gt;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;br/&amp;gt; &amp;lt;/span&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; document.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/%E6%80%8E%E4%B9%88%E8%AF%84%E8%AE%BA/featured.png" />
     </item>
     
     <item>
@@ -87,6 +152,51 @@ spring: cloud: nacos: server-addr: localhost:8848 discovery: cluster-name: ClUST
     </item>
     
     <item>
+      <title>微信登录</title>
+      <link>/%E7%AC%94%E8%AE%B0/wexin-oauth/</link>
+      <pubDate>Sat, 02 Mar 2024 13:22:59 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/wexin-oauth/</guid>
+      <description>微信登录 #参考文章：
+Vue生成二维码
+构建微信登录服务器 验证后端
+微信开发公众平台
+效果展示： #通过前端生成的二维码：
+前端部分（使用Dom来创建script节点）： #createWxLoginQrCode(){ const script=document.createElement(&amp;#39;script&amp;#39;); script.type=&amp;#39;text/javascript&amp;#39;; script.src=&amp;#39;https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js&amp;#39;; const wxElement = document.body.appendChild(script) wxElement.onload = function () { var obj = new WxLogin({ id: &amp;#39;wxLoginCode&amp;#39;, // 需要显示的容器id appid: &amp;#39;&amp;#39;,// 公众号appid wx******* scope: &amp;#39;snsapi_login&amp;#39;, // 网页默认即可 redirect_uri: encodeURIComponent(&amp;#39; &amp;#39;), // 授权成功后回调的url state: Math.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/wexin-oauth/featured.png" />
+    </item>
+    
+    <item>
+      <title>自用的Vscode个人觉得还算耐看的主题和字体以及编码习惯</title>
+      <link>/%E7%AC%94%E8%AE%B0/vscode/</link>
+      <pubDate>Sat, 02 Mar 2024 13:22:59 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/vscode/</guid>
+      <description>Java 选手为什么用 Vscode 了？
+答：苦于 IDEA 的启动速度，本人的电脑带不动了很多了，就算改了索引和 Maven，经常还是要编辑 js，vue，html 文件，小全栈辣鸡吧，故而转战 Vscode。并不完全弃坑 IDEA
+目前调教 Vscode 还算挺好哒哈哈，好用呀！！！
+这里我选择了本地的 Maven 和用于日语的字体()，主题选用的是：Default Dark Modern，目前看起来还行，经典就是好，配合我的背景图片很搭!
+当选择编写 Spring 应用程序时可选用 Idea 主题，较为接近 Jetbrains 家族的 Idea,字体选用的是 JetBrains 家族的 JetBrains Mono，normal 版；</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/vscode/featured.png" />
+    </item>
+    
+    <item>
+      <title>Spring-Security</title>
+      <link>/%E7%AC%94%E8%AE%B0/security/</link>
+      <pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/security/</guid>
+      <description>基于Spring6+JDK18的SpringSecurity环境的项目DEMO #项目地址：
+ToDreamr/backend-base基于 Spring6+Vue+Jwt+JDK18环境的SecurityDemoJava 00基本实现的功能 #Security通过数据库实现自定义登录 通过自己添加的过滤器链完成JWT+Token的请求权限认证 Token加入Redis做无状态无Session处理 邮箱验证码收发功能 注意事项 #sql执行脚本在项目doc文件目录下，Security在Spring6下已经废除
+通过WebSecurityAdaptor来实现HttpSecurity这个Bean的配置注入。
+目前只支持Lamda表达式。
+请在application.yml中自行配置自己的邮箱SMTP服务
+配置案例：
+@Bean public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { return http .</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/security/featured.png" />
+    </item>
+    
+    <item>
       <title>Docker</title>
       <link>/docker/</link>
       <pubDate>Thu, 08 Feb 2024 14:22:59 +0800</pubDate>
@@ -100,10 +210,10 @@ sudo mkdir -p /etc/docker sudo tee /etc/docker/daemon.json &amp;lt;&amp;lt;- &am
     
     <item>
       <title>Music</title>
-      <link>/music/</link>
+      <link>/entire-note/music_build/</link>
       <pubDate>Wed, 07 Feb 2024 19:22:59 +0800</pubDate>
       
-      <guid>/music/</guid>
+      <guid>/entire-note/music_build/</guid>
       <description>搭建本站音乐 #搭建过程绕了一些弯子，吃了前端的亏，主要借鉴了金圣皓，得知了目前主流的博客音乐依托于APlayer&amp;amp;Meting JS,前者是嵌入HTML的音乐组件库，后者是可用通过网易，QQ音乐等网站的音乐插件，本网站作为静态页面，故只需通过CDN引入即可
 网站搭建主题为Blowfish，在blog/layouts/shortcodes文件夹下添加album.html文件
 这里采用的是网易音乐的歌单，获取歌单id自行从&lt;?xml version=&#34;1.0&#34; standalone=&#34;no&#34;?&gt;&lt;!DOCTYPE svg PUBLIC &#34;-//W3C//DTD SVG 1.1//EN&#34; &#34;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&#34;&gt;网易云音乐歌单中获取
@@ -112,13 +222,40 @@ sudo mkdir -p /etc/docker sudo tee /etc/docker/daemon.json &amp;lt;&amp;lt;- &am
     </item>
     
     <item>
+      <title>本站Music搭建相关</title>
+      <link>/%E7%AC%94%E8%AE%B0/music/</link>
+      <pubDate>Wed, 07 Feb 2024 19:22:59 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/music/</guid>
+      <description>搭建本站音乐 #搭建过程绕了一些弯子，吃了前端的亏，主要借鉴了金圣皓，得知了目前主流的博客音乐依托于APlayer&amp;amp;Meting JS,前者是嵌入HTML的音乐组件库，后者是可用通过网易，QQ音乐等网站的音乐插件，本网站作为静态页面，故只需通过CDN引入即可
+Meting Js参数,官方文档
+&amp;lt;!--MetingJS参数详情--&amp;gt; &amp;lt;!-- id=&amp;#39;外链播放器id&amp;#39;,必须参数 type=[song=单曲, playlist=歌单, album=专辑, search=搜索结果, artist=艺术家],必须参数 server=[netease=网易云音乐, tencent=QQ音乐, kugou=酷狗音乐, xiami=虾米音乐, baidu=百度音乐],必须参数 fixed=启用固定模式，固定在左下角,默认false mini=启用迷你模式,默认false preload=[none,metadata,auto] mutex=[互斥锁，默认true],默认false order=[random=随机播放,list=列表播放] loop=[all=全部循环, one=循环一次 ,none=不循环] volume=[音量，默认0.</description>
+      
+    </item>
+    
+    <item>
       <title>音乐</title>
-      <link>/entire-note/music/</link>
+      <link>/music/</link>
       <pubDate>Mon, 29 Jan 2024 18:23:23 +0800</pubDate>
       
-      <guid>/entire-note/music/</guid>
+      <guid>/music/</guid>
       <description></description>
       
+    </item>
+    
+    <item>
+      <title>NetFlix和SpringCloudAlibaba</title>
+      <link>/%E7%AC%94%E8%AE%B0/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%BC%94%E8%BF%9B/</link>
+      <pubDate>Fri, 26 Jan 2024 13:56:23 +0000</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%BC%94%E8%BF%9B/</guid>
+      <description>Spring Cloud Netflix 介绍Netflix套件中有Eureka、Ribbon、Hystrix、Zuul、Feign五个非常知名的开源项目，分别被用于服务治理、负载均衡、服务容错、服务网关、服务通信。
+2018年，Netflix套件中的开源项目陆续进入了维护模式。
+2020年12月22日，Spring Cloud 2020.0.0版本发布，该版本中移除了Netflix套件中的相关依赖。
+Spring Cloud Alibaba 介绍2018年7月，Spring Cloud Alibaba正式开源，进入Spring Cloud孵化器。2018年10月，Spring Cloud Alibaba发布开源后的第一个版本。
+Spring Cloud Alibaba提供的组件如下：
+Sentinel：阿里巴巴开源产品，不仅仅可以作为断路器，也支持流量控制和服务降级。Nacos：阿里巴巴开源产品，服务注册与服务发现，同时也可以作为配置中心。RocketMQ：阿里巴巴开源的分布式消息和流计算平台。Dubbo：阿里巴巴开源产品，高性能Java RPC框架，服务通信组件。Seata：阿里巴巴开源产品，一个易于使用的高性能微服务分布式事务解决方案。Alibaba Cloud ACM：其前身为淘宝内部配置中心Diamond，是一款应用配置中心产品，需付费。Alibaba Cloud OSS：阿里云对象存储OSS是一款海量、安全、低成本、高可靠的云存储服务，需付费。Alibaba Cloud SMS：阿里云短信服务，需付费。Alibaba Cloud SchedulerX：阿里中间件自研的基于Akka架构的新一代分布式任务调度平台，需付费。spring-cloud 和 spring-cloud-alibaba 的区别Spring Cloud：Spring 官方提供的分布式应用开发的一套共用模式，也可以理解成一套微服务开发的统一的抽象编程模型。Spring Cloud Netflix：基于 Spring Cloud 编程模型实现的微服务框架，是最早期的微服务框架。近年来，Netflix 宣布大多数组件停止维护。Spring Cloud Alibaba：Alibaba 提供的基于 Spring Cloud 编程模型实现的微服务框架，其所有组件都来自于阿里巴巴微服务技术，无论是解决方案完整性、技术成熟度、社区还是文档资料等都对国内开发者非常友好。spring-cloud是Spring官方提供的微服务开发工具。它基于Spring Boot构建，提供了一系列框架和工具帮助我们快速构建分布式系统中的微服务架构。spring-cloud主要包含以下组件:</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%BC%94%E8%BF%9B/featured.png" />
     </item>
     
     <item>
@@ -157,6 +294,30 @@ sudo mkdir -p /etc/docker sudo tee /etc/docker/daemon.json &amp;lt;&amp;lt;- &am
 两数之和
 三数之和
 class Main{ //两数之和 public static int[] twoSum(int[] nums, int target) { //找出和为target的数组中元素的下标： HashMap&amp;lt;Integer,Integer&amp;gt; dic=new HashMap&amp;lt;&amp;gt;();//和 int index=0; int dicIndex=0; int len=nums.length; Set&amp;lt;Integer&amp;gt; list=new HashSet&amp;lt;&amp;gt;(); for (int i=0;i&amp;lt;len;i++){ dic.</description>
+      
+    </item>
+    
+    <item>
+      <title>Eureka</title>
+      <link>/%E7%AC%94%E8%AE%B0/eureka/</link>
+      <pubDate>Sat, 11 Nov 2023 23:55:26 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/eureka/</guid>
+      <description>整个项目很简单，主要需要注意版本的问题,这也是微服务的主要问题
+启动成功
+还是贴一下maven好
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;parent&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.2&amp;lt;/version&amp;gt; &amp;lt;relativePath/&amp;gt; &amp;lt;!-- lookup parent from repository --&amp;gt; &amp;lt;/parent&amp;gt; &amp;lt;groupId&amp;gt;com.example&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;eureka&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;name&amp;gt;eureka&amp;lt;/name&amp;gt; &amp;lt;description&amp;gt;eureka&amp;lt;/description&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;java.</description>
+      
+    </item>
+    
+    <item>
+      <title>写点脚本</title>
+      <link>/%E7%AC%94%E8%AE%B0/%E6%8E%A8%E9%80%81%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 11 Nov 2023 23:55:26 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/%E6%8E%A8%E9%80%81%E7%AC%94%E8%AE%B0/</guid>
+      <description>懒得点点了，写个脚本维护笔记
+目前来看效果还行</description>
       
     </item>
     
@@ -200,6 +361,23 @@ public	公共资源目录。
 package.json	项目配置文件。
 vue3创建应用 #实际案例 #语法： const app = Vue.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/entire-note/vue/featured.png" />
+    </item>
+    
+    <item>
+      <title>搭建图床</title>
+      <link>/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BA%8A/</link>
+      <pubDate>Fri, 03 Nov 2023 22:43:25 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BA%8A/</guid>
+      <description>通过GitHub+PicGo+CDN搭建自己的图床 #图床一般是指储存图片的服务器，有国内和国外之分。国外的图床由于有 空间距离等因素决定访问速度很慢影响图片显示速度。国内也分为单线空间、 多线空间和cdn加速三种。# CDN 是构建在数据网络上的一种分布式的内容分发网。 CDN 的作用是采用 流媒体服务器 集群技术，克服单机系统输出带宽及并发能力不足的缺点，可极大提升系统支持的 并发流数目，减少或避免 单点失效带来的不良影响。# github搭建仓库
+下载 PicGO 配置 CDN
+创建仓库 #PICGO #配置加速
+如何配置token？
+首先到github上选择生成自己的token：
+点击首页选择设置：
+下拉到develop settings
+选择下方生成GitHub token：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BA%8A/featured.png" />
     </item>
     
     <item>
@@ -273,8 +451,23 @@ ReferenceQueue&amp;lt;Object&amp;gt; queue = new ReferenceQueue&amp;lt;&amp;gt;(
       <pubDate>Sat, 21 Oct 2023 20:52:20 +0800</pubDate>
       
       <guid>/all/</guid>
-      <description>全部文章代码随想录算法合辑19 March 2024&amp;middot;1 分钟算法抽象数据类型ADT18 March 2024&amp;middot;2 分钟要求熟记Mysql-Redis15 March 2024&amp;middot;8 分钟主从部分计算机科学基础9 March 2024&amp;middot;3 分钟要求熟记使用主从模式搭建一个Socket网络通信模型6 March 2024&amp;middot;1 分钟nio微服务基础知识5 March 2024&amp;middot;2 分钟微服务Docker8 February 2024&amp;middot;1 分钟笔记Music7 February 2024&amp;middot;1 分钟笔记音乐29 January 2024我的生日15 November 2023&amp;middot;1 分钟生活区间个位和14 November 2023&amp;middot;1 分钟leetcode数之和14 November 2023&amp;middot;1 分钟leetcode没备份笔记的后果11 November 2023&amp;middot;1 分钟随记RabbitMq7 November 2023&amp;middot;2 分钟消息队列Vue3 响应式Api开发笔记4 November 2023&amp;middot;2 分钟vueC++27 October 2023&amp;middot;6 分钟语言friend27 October 2023&amp;middot;1 分钟朋友们面试题25 October 2023&amp;middot;1 分钟面试题类加载24 October 2023&amp;middot;1 分钟虚拟机元空间和引用方式24 October 2023&amp;middot;1 分钟虚拟机Jvm12 October 2023&amp;middot;2 分钟虚拟机垃圾回收机制12 October 2023&amp;middot;1 分钟虚拟机学习计划10 October 2023&amp;middot;1 分钟规划并发进阶9 October 2023&amp;middot;4 分钟并发编程Java-Concurrent9 October 2023&amp;middot;3 分钟并发编程如何通过hugo搭建自己的博客3 October 2023&amp;middot;1 分钟杂记对象间的关系3 October 2023&amp;middot;1 分钟Java SE关键字3 October 2023&amp;middot;5 分钟Java SE实例化Node3 October 2023&amp;middot;1 分钟Java SE数据结构篇3 October 2023&amp;middot;1 分钟算法应该没人来这里吧3 October 2023&amp;middot;1 分钟ThreadLocal3 October 2023&amp;middot;2 分钟Java SERedis3 October 2023&amp;middot;2 分钟缓存1 January 0001&amp;middot;52 分钟Docker1 January 0001&amp;middot;7 分钟Mysql1 January 0001&amp;middot;6 分钟Netty1 January 0001&amp;middot;17 分钟NIO1 January 0001&amp;middot;22 分钟RabbitMq1 January 0001&amp;middot;7 分钟SpringCloud 11 January 0001&amp;middot;9 分钟SpringCloud 21 January 0001&amp;middot;11 分钟SpringCloud 31 January 0001&amp;middot;10 分钟创建型1 January 0001&amp;middot;4 分钟二分法1 January 0001&amp;middot;1 分钟代码随想录复杂度1 January 0001&amp;middot;1 分钟代码随想录哈希篇1 January 0001&amp;middot;2 分钟代码随想录结构型1 January 0001&amp;middot;5 分钟链表的基本操作1 January 0001&amp;middot;1 分钟代码随想录链表篇1 January 0001&amp;middot;3 分钟代码随想录螺旋矩阵1 January 0001&amp;middot;2 分钟代码随想录面向对象设计原则1 January 0001&amp;middot;4 分钟行为型1 January 0001&amp;middot;7 分钟移除元素1 January 0001&amp;middot;1 分钟代码随想录有序数组的平方1 January 0001&amp;middot;1 分钟代码随想录长度最小的数组1 January 0001&amp;middot;2 分钟代码随想录</description>
+      <description>全部文章Help30 April 2024&amp;middot;1 分钟帮助文档代码随想录算法合辑19 March 2024&amp;middot;1 分钟算法抽象数据类型ADT18 March 2024&amp;middot;2 分钟要求熟记Mysql-Redis15 March 2024&amp;middot;8 分钟主从部分Mac体验版14 March 2024&amp;middot;1 分钟笔记爬虫浅记13 March 2024&amp;middot;2 分钟笔记Waline评论系统11 March 2024&amp;middot;1 分钟笔记计算机科学基础9 March 2024&amp;middot;3 分钟要求熟记使用主从模式搭建一个Socket网络通信模型6 March 2024&amp;middot;1 分钟nio微服务基础知识5 March 2024&amp;middot;2 分钟微服务微信登录2 March 2024&amp;middot;4 分钟Oauth2自用的Vscode个人觉得还算耐看的主题和字体以及编码习惯2 March 2024&amp;middot;1 分钟笔记Spring-Security23 February 2024&amp;middot;1 分钟springDocker8 February 2024&amp;middot;1 分钟笔记Music7 February 2024&amp;middot;1 分钟笔记本站Music搭建相关7 February 2024&amp;middot;1 分钟笔记音乐29 January 2024NetFlix和SpringCloudAlibaba26 January 2024&amp;middot;1 分钟微服务我的生日15 November 2023&amp;middot;1 分钟生活区间个位和14 November 2023&amp;middot;1 分钟leetcode数之和14 November 2023&amp;middot;1 分钟leetcodeEureka11 November 2023&amp;middot;1 分钟微服务写点脚本11 November 2023&amp;middot;1 分钟随机没备份笔记的后果11 November 2023&amp;middot;1 分钟随记RabbitMq7 November 2023&amp;middot;2 分钟消息队列Vue3 响应式Api开发笔记4 November 2023&amp;middot;2 分钟vue搭建图床3 November 2023&amp;middot;1 分钟杂记C++27 October 2023&amp;middot;6 分钟语言friend27 October 2023&amp;middot;1 分钟朋友们面试题25 October 2023&amp;middot;1 分钟面试题类加载24 October 2023&amp;middot;1 分钟虚拟机元空间和引用方式24 October 2023&amp;middot;1 分钟虚拟机Latex语法19 October 2023&amp;middot;1 分钟latexJvm12 October 2023&amp;middot;2 分钟虚拟机垃圾回收机制12 October 2023&amp;middot;1 分钟虚拟机状态机12 October 2023&amp;middot;1 分钟硬件语言学习计划10 October 2023&amp;middot;1 分钟规划并发进阶9 October 2023&amp;middot;4 分钟并发编程Java-Concurrent9 October 2023&amp;middot;3 分钟并发编程如何通过hugo搭建自己的博客3 October 2023&amp;middot;1 分钟杂记科学上网3 October 2023&amp;middot;1 分钟杂记对象间的关系3 October 2023&amp;middot;1 分钟Java SE关键字3 October 2023&amp;middot;5 分钟Java SE实例化Node3 October 2023&amp;middot;1 分钟Java SE数据结构篇3 October 2023&amp;middot;1 分钟算法应该没人来这里吧3 October 2023&amp;middot;1 分钟ThreadLocal3 October 2023&amp;middot;2 分钟Java SERedis3 October 2023&amp;middot;2 分钟缓存Hello Friend3 October 2003&amp;middot;1 分钟post1 January 0001&amp;middot;52 分钟1 January 0001&amp;middot;1 分钟Docker1 January 0001&amp;middot;7 分钟Mysql1 January 0001&amp;middot;6 分钟Netty1 January 0001&amp;middot;17 分钟NIO1 January 0001&amp;middot;22 分钟RabbitMq1 January 0001&amp;middot;7 分钟SpringCloud 11 January 0001&amp;middot;9 分钟SpringCloud 21 January 0001&amp;middot;11 分钟SpringCloud 31 January 0001&amp;middot;10 分钟创建型1 January 0001&amp;middot;4 分钟二分法1 January 0001&amp;middot;1 分钟代码随想录封面测试1 January 0001复杂度1 January 0001&amp;middot;1 分钟代码随想录哈希篇1 January 0001&amp;middot;2 分钟代码随想录结构型1 January 0001&amp;middot;5 分钟链表的基本操作1 January 0001&amp;middot;1 分钟代码随想录链表篇1 January 0001&amp;middot;3 分钟代码随想录螺旋矩阵1 January 0001&amp;middot;2 分钟代码随想录面向对象设计原则1 January 0001&amp;middot;4 分钟书影音行为型1 January 0001&amp;middot;7 分钟移除元素1 January 0001&amp;middot;1 分钟代码随想录有序数组的平方1 January 0001&amp;middot;1 分钟代码随想录长度最小的数组1 January 0001&amp;middot;2 分钟代码随想录</description>
       
+    </item>
+    
+    <item>
+      <title>Latex语法</title>
+      <link>/%E7%AC%94%E8%AE%B0/latex/</link>
+      <pubDate>Thu, 19 Oct 2023 15:55:16 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/latex/</guid>
+      <description>环境设置： #\begin{center} \end{center} 这样就是一个环境，所有的都是隔离的。
+头部文件 #\documentclass{setting} \usepackage[utf8]{inputenc} \usepackage[T1]{fontenc} \usepackage{graphicx} \usepackage[]{setspace} 在头部设置文件排版样式，导入依赖包，基本在本地
+运行部分 #\begin{document} 选择合适的编译器才可以编译，否则出错
+导入自定义式样 #更新命令：texhash 式样文件的后缀：.cls文件，在里面自定义命令和样式实现排版布局
+例如下面：
+\newcommand{\role}[2]{ {\par \textit{#1} ~ #2 \par} \vspace{0.5ex} } \newcommand{\biInfo}[2]{ {#1 \quad #2} } \newcommand{\tripleInfo}[3]{ {#1 \quad #2 \quad #3} } </description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/latex/featured.png" />
     </item>
     
     <item>
@@ -311,6 +504,20 @@ Jvm 基于 HotSpot 虚拟机架构同时也是基于栈实现的。与 C 语言�
 Major GC - 主要垃圾回收，主要进行老年代的垃圾收集。
 Full GC - 完全垃圾回收，对整个Java堆内存和方法区进行垃圾回收。</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/featured.png" />
+    </item>
+    
+    <item>
+      <title>状态机</title>
+      <link>/%E7%AC%94%E8%AE%B0/vhdl/</link>
+      <pubDate>Thu, 12 Oct 2023 19:01:39 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/vhdl/</guid>
+      <description>有限状态机 #寄存器和组合时序逻辑电路构成硬件时序逻辑电路
+特点：只能在时钟沿发生跳变时才能完成状态转移，状态机可以在时钟跳变时完成复杂的任务。
+状态机的结构 #状态寄存器由一组寄存器构成,n个寄存器可存储2^n个状态
+输出取决于状态和输入时，这样的状态机称为Mealy状态机，只和当前状态有关的称为Moore状态机
+描述有限状态机的方法： always语句和case语句</description>
+      
     </item>
     
     <item>
@@ -355,10 +562,10 @@ Java内存模型（JMM） #主内存： 存放对象实例的部分 工作内�
     
     <item>
       <title>如何通过hugo搭建自己的博客</title>
-      <link>/%E7%AC%94%E8%AE%B0/</link>
+      <link>/%E7%AC%94%E8%AE%B0/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Tue, 03 Oct 2023 23:44:01 +0800</pubDate>
       
-      <guid>/%E7%AC%94%E8%AE%B0/</guid>
+      <guid>/%E7%AC%94%E8%AE%B0/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/</guid>
       <description>如何通过Hugo这个框架来搭建一款属于自己的博客呢？ #观前提醒：这篇笔记借鉴了下面两个作者：
 一是：小棉尾巴
 事件契机 #我其实原本就知道github的pages自动部署博客功能，当时大二不熟练，今天目睹专业大佬的博客，自然也就重新搞起来了。
@@ -369,7 +576,23 @@ winget install Hugo.Hugo.Extended 等待下载完成重启Shell命令窗口即�
 检查是否安装成功：
 hugo version 第二部创建Hugo博客项目 #只需要在文件夹下面新建终端使用如下命令，hugo将会自动创建你的项目名称文件夹 ，同时弹出一个主题链接
 hugo new site +你的项目名称 现在你需要进入你的项目也就是命令： cd 你的项目名称</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>科学上网</title>
+      <link>/%E7%AC%94%E8%AE%B0/vpn-ssr/</link>
+      <pubDate>Tue, 03 Oct 2023 22:43:25 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/vpn-ssr/</guid>
+      <description>先放一张跳墙成功的画面： #科学上网难吗？ #结论：很简单！！！
+首先是我在配置代理时候发现的几个好的站点：如下 #科学上网主要有两个代理方法，但实际内核应该是一样的：
+这里有关于两个不同的翻墙方法的说明链接 #第一个：
+第二个：
+参考链接：SSR配置说明 ssr链接方式
+如何翻墙啊，说了那么多。 #第一步：下载 #下载链接 蓝色款（不推荐，本文也不采用）：ShadowsocksR然后点击zip下载即可。ss的好处是没被墙，可以直接到git上下载。
+红色款（强烈推荐！！！）：这里我直接放上zip，因为国内无法下载，我已经提前翻墙下载好咯。 #下好后： #先复制下面的链接，然后点击ShadowssocksR-dotnet4.0.exe！！！！ #首先准备好ssr链接。这个方法最简单。 #ssr://Y20xLWhrLmh1dGFvbm9kZTIudG9wOjEyNDA1OmF1dGhfYWVzMTI4X3 NoYTE6Y2hhY2hhMjAtaWV0ZjpodHRwX3NpbXBsZTpTSFZVWVc5RGJHOTFaQS8_b 2Jmc3BhcmFtPU16WmhNV0V6TWpVd05TNXRhV055YjNOdlpuUXVZMjl0JnByb3RvcGFyYW0 9TXpJMU1EVTZTSEF6VlVVNE5YTmhWMjl2UjFOTlJnJnJlbWFya3M9NmFhWjVyaXZJQzBnU1VWUVRDQXRJ Rk5UTDFOVFVpQXRJREExJmdyb3VwPTVhU0g1NVNvVVZIdnZKb3pORFF6T1RVMk5qRXk 这里我们选择用SSR,影梭的粉红色飞机。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/vpn-ssr/featured.png" />
     </item>
     
     <item>
@@ -462,6 +685,17 @@ Mset 批量 添加key-value</description>
     </item>
     
     <item>
+      <title>Hello Friend</title>
+      <link>/%E7%AC%94%E8%AE%B0/post/</link>
+      <pubDate>Fri, 03 Oct 2003 00:00:00 +0000</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/post/</guid>
+      <description>我的名字是春江花朝秋月夜，我是这个博客的作者。我这样做是为了记录之前学习的笔记，这样很有成就感。 我们都知道在网络上开始做一些事情有多难，尤其是现在。但是，为了自己的头发没有白掉，加油吧，大家！
+— 春江花朝秋月夜 S01E01</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/post/featured.png" />
+    </item>
+    
+    <item>
       <title></title>
       <link>/doc/cpp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -475,6 +709,16 @@ C++提供两种模板机制:函数模板和类模板
 建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个虚拟的类型来代表。
 语法：
 template&amp;lt;typename T&amp;gt; 函数声明或定义 解释：</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/%E7%AC%94%E8%AE%B0/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/</guid>
+      <description>发誓： #本人将会参加校招和研究生考试中，为之努力！谦虚向学而不是三天打鱼两天晒网</description>
       
     </item>
     
@@ -634,6 +878,16 @@ left = 0; right = nums.size() - 1; while(left &amp;lt;= right){ // 区间为空 
     </item>
     
     <item>
+      <title>封面测试</title>
+      <link>/%E7%AC%94%E8%AE%B0/featured/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/featured/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/featured/featured.jpg" />
+    </item>
+    
+    <item>
       <title>复杂度</title>
       <link>/algorithm/%E7%AE%97%E6%B3%95/c/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -723,6 +977,16 @@ class Solution { public: //翻转链表 //输入：head = [1,2,3,4,5] //输出�
 一个对象应该只包含单一的职责，并且该职责被完整地封装在一个类中。
 比如我们现在有一个People类：
 //一个人类 public class People { /** * 人类会编程 */ public void coding(){ System.out.println(&amp;#34;int mian() {&amp;#34;); System.out.println(&amp;#34; printf(\&amp;#34;Holle Wrold!</description>
+      
+    </item>
+    
+    <item>
+      <title>书影音</title>
+      <link>/media/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/media/</guid>
+      <description>待完成&amp;hellip;.</description>
       
     </item>
     

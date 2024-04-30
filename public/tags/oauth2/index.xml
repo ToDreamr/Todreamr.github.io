@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oauth2 on 春江花朝秋月夜</title>
+    <link>/tags/oauth2/</link>
+    <description>Recent content in Oauth2 on 春江花朝秋月夜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>© 2024 春江花朝秋月夜</copyright>
+    <lastBuildDate>Sat, 02 Mar 2024 13:22:59 +0800</lastBuildDate><atom:link href="/tags/oauth2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>微信登录</title>
+      <link>/%E7%AC%94%E8%AE%B0/wexin-oauth/</link>
+      <pubDate>Sat, 02 Mar 2024 13:22:59 +0800</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/wexin-oauth/</guid>
+      <description>微信登录 #参考文章：
+Vue生成二维码
+构建微信登录服务器 验证后端
+微信开发公众平台
+效果展示： #通过前端生成的二维码：
+前端部分（使用Dom来创建script节点）： #createWxLoginQrCode(){ const script=document.createElement(&amp;#39;script&amp;#39;); script.type=&amp;#39;text/javascript&amp;#39;; script.src=&amp;#39;https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js&amp;#39;; const wxElement = document.body.appendChild(script) wxElement.onload = function () { var obj = new WxLogin({ id: &amp;#39;wxLoginCode&amp;#39;, // 需要显示的容器id appid: &amp;#39;&amp;#39;,// 公众号appid wx******* scope: &amp;#39;snsapi_login&amp;#39;, // 网页默认即可 redirect_uri: encodeURIComponent(&amp;#39; &amp;#39;), // 授权成功后回调的url state: Math.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="/%E7%AC%94%E8%AE%B0/wexin-oauth/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

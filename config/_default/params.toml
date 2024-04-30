@@ -38,10 +38,10 @@ smartTOCHideUnfocusedChildren = false
   layout = "background" # valid options: page, profile, hero, card, background, custom
   homepageImage = "/img/三叶.png" # used in: hero, and card
   showRecent = true
-  showRecentItems = 6
+  showRecentItems = 12
   showMoreLink = true
   showMoreLinkDest = "tags"
-  cardView = true
+  cardView = false
   cardViewScreenWidth = false
   layoutBackgroundBlur = true # only used when layout equals background
 
