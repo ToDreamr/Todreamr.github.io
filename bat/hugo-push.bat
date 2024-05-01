@@ -5,7 +5,7 @@ echo;
 
 cd ..
 
-hugo
+echo 'hugo'
 
 git add .
 

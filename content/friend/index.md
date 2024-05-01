@@ -27,9 +27,9 @@ tags: [ "朋友们" ]
 
 <!-- {{<author  z3475 "泛 ACGN 爱好者，喜欢业余写点小作品改善生活" "https://z3475.work/rebirth/images/avatar.png" "https://z3475.work/" >}} -->
 
-{{<author AncientElement "春江潮水连海平，海上明月共潮生" "https://ancientelement.gitee.io/images/avatar_black.png" "https://ancientelement.gitee.io/" >}}
+{{<author AncientElement "春江潮水连海平，海上明月共潮生" "https://todreamr.github.io/img/%E4%B8%89%E5%8F%B6_huefd8a5d2e6c0b8ff3aa6580d0e50af5a_1328716_288x288_fill_box_center_3.png" "https://ancientelement.github.io/" >}}
 
-{{<author fansea "目标明确，只管去做" "https://fansea.gitee.io/fansea.png" "https://fansea.gitee.io/" >}}
+[//]: # ({{<author fansea "目标明确，只管去做" "https://fansea.gitee.io/fansea.png" "https://fansea.gitee.io/" >}})
 
 {{<author Pinpe的云端 "一个属于自己的云朵。" "https://bu.dusays.com/2023/11/29/6567122d3f4a6.jpg" "https://pinpe.top/" >}}
 
