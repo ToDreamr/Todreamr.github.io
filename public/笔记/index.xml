@@ -272,6 +272,17 @@ hugo new site +你的项目名称 现在你需要进入你的项目也就是命�
     </item>
     
     <item>
+      <title>博客统计</title>
+      <link>/%E7%AC%94%E8%AE%B0/stats/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/%E7%AC%94%E8%AE%B0/stats/</guid>
+      <description>注1：同一文章可能包含多个分类，下同。 注2：山贼 是我的一个朋友。
+社交 #</description>
+      
+    </item>
+    
+    <item>
       <title>封面测试</title>
       <link>/%E7%AC%94%E8%AE%B0/featured/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

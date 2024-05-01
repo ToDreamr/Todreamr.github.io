@@ -163,7 +163,7 @@
                                         <ul class="pl-0 p-0 m-0 flex space-x-[-10px]">
                                             <li class="neodb w-6 h-6 overflow-hidden pl-0 rounded-full list-none border-2 border-solid border-neutral">
                                                 <a href="/go/?target={{- $movie_url | base64Encode -}}" target="_blank" rel="noreferrer noopener nofollow">
-                                                    <img src="/assets/img/author.png" class="nozoom m-0" loading="lazy" alt="NeoDB" no-view>
+                                                    <img src="/assets/images/movie/neodbsocial.jpg" class="nozoom m-0" loading="lazy" alt="NeoDB" no-view>
                                                 </a>
                                             </li>
                                             {{ range .external_resources }}
@@ -173,7 +173,7 @@
                                             {{ if not (strings.Contains .url "imdb.com") }}
                                             <li class="external-resource w-6 h-6 overflow-hidden pl-0 rounded-full list-none border-2 border-solid border-neutral">
                                                 <a href="/go/?target={{- .url | base64Encode -}}" target="_blank" rel="noreferrer noopener nofollow">
-                                                    <img src="/assets/img/author.png/{{- $host -}}.png" class="nozoom m-0" loading="lazy" alt="{{- $title -}}" no-view>
+                                                    <img src="/assets/images/movie/{{- $host -}}.png" class="nozoom m-0" loading="lazy" alt="{{- $title -}}" no-view>
                                                 </a>
                                             </li>
                                             {{ end }}
@@ -181,7 +181,7 @@
                                             {{ if and ($imdb) (ne $imdb "") }}
                                             <li class="imdb w-6 h-6 overflow-hidden pl-0 rounded-full list-none border-2 border-solid border-neutral">
                                                 <a href="/go/?target={{- $imdb | base64Encode -}}" target="_blank" rel="noreferrer noopener nofollow">
-                                                    <img src="/assets/img/author.png" class="nozoom m-0" loading="lazy" alt="IMDB" no-view>
+                                                    <img src="/assets/images/movie/www.imdb.com.png" class="nozoom m-0" loading="lazy" alt="IMDB" no-view>
                                                 </a>
                                             </li>
                                             {{ end }}

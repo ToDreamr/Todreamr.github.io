@@ -737,12 +737,12 @@
 
 
 <article>
-  
-  
-  
-  
-  
-  
+    
+    
+    
+    
+    
+    
 
 
 <div id="hero" class="h-[150px] md:h-[200px]"></div>
@@ -771,12 +771,12 @@
     });
 </script>
 
-  
-  
-
-  <header id="single_header" class="mt-5 max-w-prose">
     
-    <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+    
+
+    <header id="single_header" class="mt-5 max-w-prose">
+        
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
   
   
     
@@ -812,12 +812,12 @@
 </ol>
 
 
-    
-    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      ThreadLocal
-    </h1>
-    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
-      
+        
+        <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral" style="font-family: 华文中宋,serif">
+            ThreadLocal
+        </h1>
+        <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+            
 
 
 
@@ -910,19 +910,15 @@
 
 
 
-    </div>
+        </div>
 
-    
-    
-    
-    
-    
+        
+        
+        
+        
+        
 
-    
-
-    
-      
-      
+        
         
         
 <div class="flex author">
@@ -1064,29 +1060,36 @@
   </div>
 </div>
 
-      
-
-      
-
-      
-      <div class="mb-5"></div>
-      
-
-    
-
-  </header>
-  
-  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    
-    
-
-      <div class="min-w-0 min-h-0 max-w-fit">
-        
         
 
+        
 
-        <div class="article-content max-w-prose mb-20">
-          <p>特点：线程隔离，相互是隔离的，不影响的,每个线程都自己玩自己的，只操作自己的单独的变量副本</p>
+        
+
+        
+        <div class="mb-5"></div>
+        
+
+    </header>
+
+    
+    
+    <div  class="meta-item">&nbsp·&nbsp
+        <span id="busuanzi_container_page_pv">页面点击量:<span id="busuanzi_value_page_pv"></span>次</span>
+    </div>
+
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row" style="font-family: 华文中宋,serif">
+
+        
+
+        
+        <div class="min-w-0 min-h-0 max-w-fit" style="width: 100%">
+            
+
+
+            <div class="article-content max-w-prose mb-20">
+                <p>特点：线程隔离，相互是隔离的，不影响的,每个线程都自己玩自己的，只操作自己的单独的变量副本</p>
 <p>内部维护的是ThreadLocalMap，所以有key和value</p>
 <p>当key指向的值为null时，value不被清理，由于key是弱引用，此时就会造成内存泄露，所以必须要通过ThreadLocal里面的remove方法手动删除值，避免内存泄露。</p>
 <p>ThreadLocalMap里面面由一个个由数组组成的key-value，组成了Entry
@@ -1177,10 +1180,23 @@
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div>
+            </div>
         </div>
-        
-        
 
+        
+        <script>
+            var oid = "views_编程语言\\java\\javase\\threadlocal\\index.md"
+            var oid_likes = "likes_编程语言\\java\\javase\\threadlocal\\index.md"
+        </script>
+        
+        
+        
+        <script type="text/javascript" src="/js/page.min.b06a29d42a4ed16787978e2eee1e8c797b7698db2bc14ccee78f5c80ac566fc996190a73ad80a5e987558474b20b96fa38f7d85b405f165ff72b7b163c5ad11b.js" integrity="sha512-sGop1CpO0WeHl44u7h6MeXt2mNsrwUzO549cgKxWb8mWGQpzrYCl6YdVhHSyC5b6OPfYW0BfFl/3K3sWPFrRGw=="></script>
+
+    </section>
+
+    
+    <footer style="width: 100%">
         
         
   
@@ -1373,26 +1389,8 @@
   
 </section>
 
-  
-      </div>
-     
-      
-      
-        
-        
-      <script>
-        var oid = "views_编程语言\\java\\javase\\threadlocal\\index.md"
-        var oid_likes = "likes_编程语言\\java\\javase\\threadlocal\\index.md"
-      </script>
-      
-      
-      
-      <script type="text/javascript" src="/js/page.min.b06a29d42a4ed16787978e2eee1e8c797b7698db2bc14ccee78f5c80ac566fc996190a73ad80a5e987558474b20b96fa38f7d85b405f165ff72b7b163c5ad11b.js" integrity="sha512-sGop1CpO0WeHl44u7h6MeXt2mNsrwUzO549cgKxWb8mWGQpzrYCl6YdVhHSyC5b6OPfYW0BfFl/3K3sWPFrRGw=="></script>
-  
-    </section>
-  <footer class="pt-8 max-w-prose print:hidden">
 
-    
+        
   
     
     
@@ -1455,12 +1453,12 @@
   
 
 
-    
-    
-    <div class="pt-3">
-      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
-      <div class="pt-3">
         
+        
+        <div class="pt-3">
+            <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+            <div class="pt-3">
+                
 
 
 
@@ -1577,11 +1575,12 @@
     observer.observe(article, options);
 </script>
 
-      </div>
-    </div>
-    
-    
-  </footer>
+            </div>
+        </div>
+        
+        
+    </footer>
+
 </article>
 
       <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
