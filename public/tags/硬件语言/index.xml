@@ -1,26 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>硬件语言 on 春江花朝秋月夜</title>
-    <link>/tags/%E7%A1%AC%E4%BB%B6%E8%AF%AD%E8%A8%80/</link>
-    <description>Recent content in 硬件语言 on 春江花朝秋月夜</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <copyright>© 2024 春江花朝秋月夜</copyright>
-    <lastBuildDate>Thu, 12 Oct 2023 19:01:39 +0800</lastBuildDate><atom:link href="/tags/%E7%A1%AC%E4%BB%B6%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>状态机</title>
-      <link>/%E7%AC%94%E8%AE%B0/vhdl/</link>
-      <pubDate>Thu, 12 Oct 2023 19:01:39 +0800</pubDate>
-      
-      <guid>/%E7%AC%94%E8%AE%B0/vhdl/</guid>
-      <description>有限状态机 #寄存器和组合时序逻辑电路构成硬件时序逻辑电路
-特点：只能在时钟沿发生跳变时才能完成状态转移，状态机可以在时钟跳变时完成复杂的任务。
-状态机的结构 #状态寄存器由一组寄存器构成,n个寄存器可存储2^n个状态
-输出取决于状态和输入时，这样的状态机称为Mealy状态机，只和当前状态有关的称为Moore状态机
-描述有限状态机的方法： always语句和case语句</description>
-      
-    </item>
-    
-  </channel>
-</rss>
