@@ -12,7 +12,7 @@ autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
 
-mainSections = ["entire-note"]
+mainSections = ["笔记"]
 # robots = ""
 
 disableImageOptimization = false

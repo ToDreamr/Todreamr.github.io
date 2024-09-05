@@ -35,7 +35,7 @@ tags: [ "朋友们" ]
 
 {{<author Pinpe的云端 "一个属于自己的云朵。" "https://bu.dusays.com/2023/11/29/6567122d3f4a6.jpg" "https://pinpe.top/" >}}
 
-{{<author 小棉尾巴 "关心前端技术、个人成长、女性主义和内容创作" "https://cuttontail.blog/img/avatar_hu835a66e02b743ac1b2c45737fd1a4839_75191_192x192_fill_q75_box_center.jpg" "https://cuttontail.blog/" >}}
+{{<author 小棉尾巴 "关心前端技术、个人成长、女性主义和内容创作" "https://todreamr.github.io/img/%E4%B8%89%E5%8F%B6_huefd8a5d2e6c0b8ff3aa6580d0e50af5a_1328716_288x288_fill_box_center_3.png" "https://cuttontail.blog/" >}}
 
 {{<author 宁子博客 "人生得意须尽欢" "https://blog.itzhiyin.com/nz.jpg" "https://blog.itzhiyin.com/" >}}
 
