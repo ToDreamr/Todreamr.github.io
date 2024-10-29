@@ -41,7 +41,7 @@ smartTOCHideUnfocusedChildren = false
   showRecentItems = 12
   showMoreLink = true
   showMoreLinkDest = "tags"
-  cardView = true
+  cardView = false
   cardViewScreenWidth = false
   layoutBackgroundBlur = true # only used when layout equals background
 
