@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>帮助文档 on 春江花朝秋月夜</title>
+    <link>//localhost:1313/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</link>
+    <description>Recent content in 帮助文档 on 春江花朝秋月夜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>© 2024 春江花朝秋月夜</copyright>
+    <lastBuildDate>Tue, 30 Apr 2024 16:17:35 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Help</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/help/</link>
+      <pubDate>Tue, 30 Apr 2024 16:17:35 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/help/</guid>
+      <description>如何使用Hugo+Blowfish? #新建文章 #使用命令新建文章，新建文章生成在content目录下 将会使用archrtypes/default.md格式添加新文件头部配置键。
+PS D:\JavaWork\qvisl9.github.io&amp;gt; hugo new help/index.md Content &amp;#34;D:\\JavaWork\\qvisl9.github.io\\content\\help\\index.md&amp;#34; created PS D:\JavaWork\qvisl9.github.io&amp;gt; 分类 #blowfish的分类相对来说不是很完善效果如下：
+实现方式很简单，需在头部配置键中添加tags项
+就像这样子：
+主题将会识别配置键并自动检索所有带有此项的文章生成分类页面
+系列 #blowfish的是带有系列配置项的，效果如下：
+类似上述的操作，需要添加头部配置项：
+注意！！！请将文件命名为index.md，否则博客主题将无法自动为文章进行分类和添加相应的功能
+图标 #添加自己的图标和文章图片，放在assets目录下，icon作为 图标文件夹，添加相应图标后可显示对应的图片，如下：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/help/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

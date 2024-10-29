@@ -1,0 +1,1144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>春江花朝秋月夜</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on 春江花朝秋月夜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>© 2024 春江花朝秋月夜</copyright>
+    <lastBuildDate>Tue, 15 Oct 2024 18:23:23 +0800</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL一些常识和函数</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/mysql/</link>
+      <pubDate>Tue, 15 Oct 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/mysql/</guid>
+      <description>MVCC机制 #当一个事务要对数据库中的数据进行修改时，MVCC 会为该事务创建一个数据快照，而不是直接修改实际的数据行。
+一致性非锁定读（读取数据的时候为了保证数据的一致性，没有锁定，通过版本号）
+如果读取的行正在执行 DELETE 或 UPDATE 操作，这时读取操作不会去等待行上锁的释放。相反地，InnoDB 存储引擎会去读取行的一个快照数据，对于这种读取历史数据的方式，我们叫它快照读 &amp;gt;(snapshot read)
+锁定读如果执行的是下列语句，就是 锁定读（Locking Reads） select &amp;hellip; lock in share mode
+select &amp;hellip; for updateinsert、update、
+delete
+操作在锁定读下，读取的是数据的最新版本，这种读也被称为 当前读（current read）。锁定读会对读取到的记录加锁：select &amp;hellip; lock in share mode：对记录加 S 锁，其它事务也可以加S锁，如果加 x 锁则会被阻塞select &amp;hellip; for update、insert、update、delete：对记录加 X 锁，且其它事务不能加任何锁在一致性非锁定读下，即使读取的记录已被其它事务加上 X 锁，这时记录也是可以被读取的，即读取的快照数据。上面说了，在 Repeatable Read 下 MVCC 防止了部分幻读，这边的 “部分” 是指在 一致性非锁定读 情况下，只能读取到第一次查询之前所插入的数据（根据 Read View 判断数据可见性，Read View 在第一次查询时生成）。但是！如果是 当前读 ，每次读取的都是最新数据，这时如果两次查询中间有其它事务插入数据，就会产生幻读。所以， InnoDB 在实现Repeatable Read 时，如果执行的是当前读，则会对读取的记录使用 Next-key Lock ，来防止其它事务在间隙间插入数据</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/mysql/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Oracle数据库</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/oracle/</link>
+      <pubDate>Tue, 15 Oct 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/oracle/</guid>
+      <description>建表语句：
+create table DEPARTMENTS ( deptno number, name varchar2(50) not null, location varchar2(50), constraint pk_departments primary key (deptno) ); Tables can declarative specify relationships between tables, typically referred to as referential integrity.</description>
+      
+    </item>
+    
+    <item>
+      <title>Ubuntu操作系统</title>
+      <link>//localhost:1313/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Tue, 15 Oct 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <description>Ubuntu操作系统 #Nginx安装 #删除nginx，–purge包括配置文件 #sudo apt-get --purge remove nginx 删除Nginx的相关核心包和
+sudo apt-get --purge remove nginxsudo apt-get --purge remove nginx-commonsudo apt-get --purge remove nginx-core 查看是否还有Nginx
+dpkg --get-selections|grep nginxwhich nginx # 不在显示nginx 安装Nginx</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>程序设计中使用到的一些图</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E7%94%BB%E5%9B%BE/</link>
+      <pubDate>Tue, 15 Oct 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E7%94%BB%E5%9B%BE/</guid>
+      <description>UML类图 #UML——Unified modeling language UML(统一建模语言)，是一种用于软件系统分析和设计的语言工具，它用于帮助软件开发人员进行思考和记录思路的结果
+UML本身是一套符号的规定，就像数学符号和化学符号一样，这些符号用于描述软件模型中的各个元素和他们之间的关系，比如类、接口、实现、泛化、依赖、组合、聚合等 设计类的原则： #设计一个类中的信息和行为要 高内聚 设计多个类, 类之间要 低耦合 对于 继承(泛化)、实现(实现)这两种关系比较简单，它们体现的是一种类与类、或者类与接口之间的 纵向关系。 其他的四种关系则体现的是类与类、或者类与接口之间的 引用/横向关系。这四种关系所表现的强弱程度来看，从强到弱依次为：组合&amp;gt;聚合&amp;gt;关联&amp;gt;依赖。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/%E7%94%BB%E5%9B%BE/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>面试经历</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E9%99%85%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E5%88%B0%E7%9A%84/</link>
+      <pubDate>Tue, 15 Oct 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E9%99%85%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E5%88%B0%E7%9A%84/</guid>
+      <description>数字马力 #说出自己实习经历中负责的最出彩的项目并介绍情况
+八股文：
+List使用for循环遍历增加或删除元素是否可行?
+不可以，回抛出(ConcurrentModificationException)
+原因：remove和add操作会导致modCount和迭代器中的expectedModCount不一致。
+解释：涉及到fail-fast机制，也就是一旦检测到可能发生错误，就立马抛出异常，程序不继续往下执行，在Java中对集合的操作经常涉及到fail-fast机制， 当多个线程对同一个集合的内容进行操作时，就可能会产生fail-fast事件
+解决办法：普通for循环、使用Iterator进行元素删除、使用Stream的filter、使用fail-safe的类等。
+数组转成集合：
+//1: List list = new ArrayList&amp;lt;&amp;gt;(Arrays.asList(&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;, &amp;#34;c&amp;#34;)) //2: Integer [] myArray = { 1, 2, 3 }; List myList = Arrays.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E9%99%85%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E5%88%B0%E7%9A%84/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Help</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/help/</link>
+      <pubDate>Tue, 30 Apr 2024 16:17:35 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/help/</guid>
+      <description>如何使用Hugo+Blowfish? #新建文章 #使用命令新建文章，新建文章生成在content目录下 将会使用archrtypes/default.md格式添加新文件头部配置键。
+PS D:\JavaWork\qvisl9.github.io&amp;gt; hugo new help/index.md Content &amp;#34;D:\\JavaWork\\qvisl9.github.io\\content\\help\\index.md&amp;#34; created PS D:\JavaWork\qvisl9.github.io&amp;gt; 分类 #blowfish的分类相对来说不是很完善效果如下：
+实现方式很简单，需在头部配置键中添加tags项
+就像这样子：
+主题将会识别配置键并自动检索所有带有此项的文章生成分类页面
+系列 #blowfish的是带有系列配置项的，效果如下：
+类似上述的操作，需要添加头部配置项：
+注意！！！请将文件命名为index.md，否则博客主题将无法自动为文章进行分类和添加相应的功能
+图标 #添加自己的图标和文章图片，放在assets目录下，icon作为 图标文件夹，添加相应图标后可显示对应的图片，如下：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/help/featured.png" />
+    </item>
+    
+    <item>
+      <title>代码随想录算法合辑</title>
+      <link>//localhost:1313/entire-note/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95-%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 19 Mar 2024 17:31:54 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95-%E7%AE%97%E6%B3%95/</guid>
+      <description>算法合辑✈️✈️去到算法目录✈️✈️2024年3月19日· 12:01</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95-%E7%AE%97%E6%B3%95/featured.png" />
+    </item>
+    
+    <item>
+      <title>抽象数据类型ADT</title>
+      <link>//localhost:1313/entire-note/%E9%93%BE%E8%A1%A8%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%91/</link>
+      <pubDate>Mon, 18 Mar 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E9%93%BE%E8%A1%A8%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%91/</guid>
+      <description>链表 ，队列和二叉树 #尝试使用cpp实现二叉树，下面是粗劣的代码： #指针和引用传递的区别：
+//如果传递引用： void List_Init(List &amp;amp;list) { // 防止访问空指针 if (list.next != NULL) { list.next = NULL; list.node_count = 0; } } //如果传递指针： void List_Init(List *list) { // 防止访问空指针 if (list-&amp;gt;next !</description>
+      
+    </item>
+    
+    <item>
+      <title>Mysql-Redis</title>
+      <link>//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/sql-redis-db/</link>
+      <pubDate>Fri, 15 Mar 2024 17:06:00 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/sql-redis-db/</guid>
+      <description>Redis详解 #1. Redis简介 #使用C语言开发的内存数据库，读写速度快，广泛用于缓存方向 可以用于分布式锁，甚至是消息队列 提供多种数据类型来支持不同的业务场景 支持事务、持久化、Lua脚本、多种集群方案 2. Redis 和 Memcached 对比 #2.1 相同点 #都基于内存，一般都是用来当缓存使用 都有过期策略 两者性能都非常高 2.2 区别 #Redis 支持更丰富的数据类型【key-value类型、提供l ist set zset hash等数据结构的存储】、更复杂的应用场景。Memcached只支持简单的 key-value 类型； Redis支持数据的持久化，有灾难恢复机制，Memcached不支持； Redis在服务器内存不足时，可以将不用的数据放到磁盘上；Memcached则直接报异常； Redis原生支持集群模式，Memcached原生不支持，需要依靠客户端实现往集群分片写入数据； Memcached是多线程的非阻塞IO复用的网络模型，Redis使用单线程的多路IO复用模型【6.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/sql-redis-db/featured.png" />
+    </item>
+    
+    <item>
+      <title>Mac体验版</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/mac%E4%BD%93%E9%AA%8C%E7%89%88bushi/</link>
+      <pubDate>Thu, 14 Mar 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/mac%E4%BD%93%E9%AA%8C%E7%89%88bushi/</guid>
+      <description>经过我的不懈努力，RedmiBook终于变成了Mac Book⬇️⬇️
+参考笔记 参考视频 #目前看起来还行：
+不得不说这个文件夹样式效果真好：
+偶尔出现卡顿，之后记录</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/mac%E4%BD%93%E9%AA%8C%E7%89%88bushi/featured.png" />
+    </item>
+    
+    <item>
+      <title>爬虫浅记</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Wed, 13 Mar 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/</guid>
+      <description>目的：使用爬虫爬取都应指定视频下方的所有评论 #接电商小公司的面试需求
+参考视频
+知道了爬虫的基本原理是模仿正常用户的操作获取相关信息，下面是实际操作的记录
+过程：
+先是去抖音网站获取评论的api接口，拉取下来后使用ApiPost测试发现返回&amp;quot;block&amp;quot;阻塞信息 而后添加了相关请求头，发现加入User-Agent是关键信息 然而每次获取不同的视频发现有更改的参数：XBogus，这个参数是网站后台通过函数循环调用自己生成的（反爬） 遂通过浏览器断点调试最终追踪堆栈到生成函数： function _0x5a8f25(_0x48914f, _0xa771aa) { return (&amp;#39;undefined&amp;#39; == typeof window ? global : window)[&amp;#39;_$webrt_1668687510&amp;#39;](args) } 于是通过Node调试js文件，模拟循环过程生成参数 window = global; document = { refferer:&amp;#39;https://www.</description>
+      
+    </item>
+    
+    <item>
+      <title>Waline评论系统</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E6%80%8E%E4%B9%88%E8%AF%84%E8%AE%BA/</link>
+      <pubDate>Mon, 11 Mar 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E6%80%8E%E4%B9%88%E8%AF%84%E8%AE%BA/</guid>
+      <description>Waline博客网站评论 #注册账号 #注册账号✈️
+创建应用✈️
+创建仓库-》用于存放评论
+创建好之后，去到settings里面修改Environment三个参数
+LEAN_ID：AppId LEAN_KEY：App_key LEAN_MASTER_KEY：Master_KEY
+添加好之后，刷新工作流
+通过HTML部署
+导入样式文件和js脚本文件
+通过Waline的配置键添加自定义的东西
+注：借鉴自金圣浩
+&amp;lt;br/&amp;gt; &amp;lt;span style=&amp;#34;color:rgba(var(--color-neutral-400),var(--tw-text-opacity));&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;post-meta-item-text&amp;#34; &amp;gt;&amp;amp;nbsp;&amp;amp;nbsp;{{i18n &amp;#34;article.page_views&amp;#34;}}: &amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;waline-pageview-count&amp;#34;&amp;gt;⏳&amp;lt;/span&amp;gt;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;br/&amp;gt; &amp;lt;/span&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; document.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/%E6%80%8E%E4%B9%88%E8%AF%84%E8%AE%BA/featured.png" />
+    </item>
+    
+    <item>
+      <title>计算机科学基础</title>
+      <link>//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95/</link>
+      <pubDate>Sat, 09 Mar 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95/</guid>
+      <description>基础知识 #Hash是什么，有哪些常见的hash定址法 #散列表算法希望能尽量做到不经过任何比较，通过一次存取就能得到所查找的数据元素 ，因而必 须要在数据元素的存储位置和它的关键字（可用 key 表示）之间建立一个确定的对应关系，使每个 关键字和散列表中一个唯一的存储位置相对应。因此在查找时，只要根据这个对应关系找到给定 关键字在散列表中的位置即可。这种对应关系被称为散列函数(可用 h(key)表示)。
+1）直接定址法： 取关键字或关键字的某个线性函数值为散列地址。 即：h(key) = key 或 h(key) = a * key + b，其中 a 和 b 为常数。 （2）数字分析法 （3）平方取值法： 取关键字平方后的中间几位为散列地址。 （4）折叠法：将关键字分割成位数相同的几部分，然后取这几部分的叠加和作为散列地址。 （5）除留余数法：取关键字被某个不大于散列表表长 m 的数 p 除后所得的余数为散列地址， 即：h(key) = key MOD p p ≤ m （6）随机数法：选择一个随机函数，取关键字的随机函数值为它的散列地址， 即：h(key) = random(key) 什么是排序二叉树 #首先如果普通二叉树每个节点满足：左子树所有节点值小于它的根节点值，且右子树所有节点值 大于它的根节点值，则这样的二叉树就是排序二叉树</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95/featured.png" />
+    </item>
+    
+    <item>
+      <title>使用主从模式搭建一个Socket网络通信模型</title>
+      <link>//localhost:1313/entire-note/netty/</link>
+      <pubDate>Wed, 06 Mar 2024 21:21:06 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/netty/</guid>
+      <description>通过NIO非阻塞式模型我们可以搭建一个Reactor-SubReactor-Handler的消息服务器 #netty的三大基本组件是：buffer，channel，selector
+目的：
+主要目的是利用Selector选择器实现IO多路复用
+先来编写一下客户端，简单起见，只需要建立一个SocketChannel获取管道流传输数据
+/** * @author 春江花朝秋月夜 */ public class ClientReactor { public static void main(String[] args) { // 创建一个新的SocketChannel，一会通过通道进行通信 try (SocketChannel channel =SocketChannel.open(newInetSocketAddress(&amp;#34;localhost&amp;#34;, 9000)); Scanner scanner = new Scanner(System.</description>
+      
+    </item>
+    
+    <item>
+      <title>微服务基础知识</title>
+      <link>//localhost:1313/entire-note/spring/</link>
+      <pubDate>Tue, 05 Mar 2024 15:08:23 +0000</pubDate>
+      
+      <guid>//localhost:1313/entire-note/spring/</guid>
+      <description>基于SpringCloudAlibaba+Nacos+Feign+Seata+Sentinel作为微服务路线叙述 #前言：本次SpringCloud微服务学习涉及NetFlix和Alibaba两不同版本，主要对应关系为：
+微服务原则：所有的服务都需要保证职责的单一原则
+SpringCloud作为一系列框架的有序集合，是SOA的延续
+SpringCloud Alibaba 是遵循SpringCloud来开发的套件，Nacos亦然
+服务注册和发现 #Eureka #Eureka能够自动注册并发现微服务，然后对服务的状态、信息进行集中管理，这样当我们需要获取其他服务的信息时，我们只需要向Eureka进行查询就可以了。
+通过Eureka服务器进行服务注册与发现，那么现在我们来看看，它的负载均衡到底是如何实现的，实际上之前演示的负载均衡是依靠LoadBalancer实现的。
+在2020年前的SpringCloud版本是采用Ribbon作为负载均衡实现，但是2020年的版本之后SpringCloud把Ribbon移除了，进而用自己编写的LoadBalancer替代。
+如何找到服务？
+Nacos #Nacos注册中心 #功能：
+服务注册发现 配置中心 服务元数据/实例元数据：可以用于流量控制（在实例的metadata（元数据）中加上标签信息。通过IRule获取Server列表并根据这些Server中元数据的标签信息决定路由情况） 局域网内服务信息传输快 服务集群分级模式
+服务-集群-实例
+修改yml：
+spring: cloud: nacos: server-addr: localhost:8848 discovery: cluster-name: ClUSTER-01 对指定服务进行配置</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/spring/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>微信登录</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/wexin-oauth/</link>
+      <pubDate>Sat, 02 Mar 2024 13:22:59 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/wexin-oauth/</guid>
+      <description>微信登录 #参考文章：
+Vue生成二维码
+构建微信登录服务器 验证后端
+微信开发公众平台
+效果展示： #通过前端生成的二维码：
+前端部分（使用Dom来创建script节点）： #createWxLoginQrCode(){ const script=document.createElement(&amp;#39;script&amp;#39;); script.type=&amp;#39;text/javascript&amp;#39;; script.src=&amp;#39;https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js&amp;#39;; const wxElement = document.body.appendChild(script) wxElement.onload = function () { var obj = new WxLogin({ id: &amp;#39;wxLoginCode&amp;#39;, // 需要显示的容器id appid: &amp;#39;&amp;#39;,// 公众号appid wx******* scope: &amp;#39;snsapi_login&amp;#39;, // 网页默认即可 redirect_uri: encodeURIComponent(&amp;#39; &amp;#39;), // 授权成功后回调的url state: Math.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/wexin-oauth/featured.png" />
+    </item>
+    
+    <item>
+      <title>自用的Vscode个人觉得还算耐看的主题和字体以及编码习惯</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/vscode/</link>
+      <pubDate>Sat, 02 Mar 2024 13:22:59 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/vscode/</guid>
+      <description>Java 选手为什么用 Vscode 了？
+答：苦于 IDEA 的启动速度，本人的电脑带不动了很多了，就算改了索引和 Maven，经常还是要编辑 js，vue，html 文件，小全栈辣鸡吧，故而转战 Vscode。并不完全弃坑 IDEA
+目前调教 Vscode 还算挺好哒哈哈，好用呀！！！
+这里我选择了本地的 Maven 和用于日语的字体()，主题选用的是：Default Dark Modern，目前看起来还行，经典就是好，配合我的背景图片很搭!
+当选择编写 Spring 应用程序时可选用 Idea 主题，较为接近 Jetbrains 家族的 Idea,字体选用的是 JetBrains 家族的 JetBrains Mono，normal 版；</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/vscode/featured.png" />
+    </item>
+    
+    <item>
+      <title>Spring-Security</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/security/</link>
+      <pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/security/</guid>
+      <description>基于Spring6+JDK18的SpringSecurity环境的项目DEMO #项目地址：
+ToDreamr/security-community基于 Spring6+Vue+Jwt+JDK18环境的SpringSecurity社区项目Java 10基本实现的功能 #Security通过数据库实现自定义登录 通过自己添加的过滤器链完成JWT+Token的请求权限认证 Token加入Redis做无状态无Session处理 邮箱验证码收发功能 注意事项 #sql执行脚本在项目doc文件目录下，Security在Spring6下已经废除
+通过WebSecurityAdaptor来实现HttpSecurity这个Bean的配置注入。
+目前只支持Lamda表达式。
+请在application.yml中自行配置自己的邮箱SMTP服务
+配置案例：
+@Bean public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { return http .</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/security/featured.png" />
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>//localhost:1313/docker/</link>
+      <pubDate>Thu, 08 Feb 2024 14:22:59 +0800</pubDate>
+      
+      <guid>//localhost:1313/docker/</guid>
+      <description>Docker镜像基本命令 #systemctl stop firewalld systemctl disable firewalld 启动Docker
+systemctl start docker systemctl restart docker docker -v 配置镜像
+sudo mkdir -p /etc/docker sudo tee /etc/docker/daemon.json &amp;lt;&amp;lt;- &amp;#39;EOF&amp;#39; { &amp;#34;registry-mirrors&amp;#34;:[&amp;#34;https://n0dwetq.mirror.aliyuncs.com&amp;#34;] } EOF sudo systemctl daemon-reload sudo systemctl restart docker 镜像操作</description>
+      
+    </item>
+    
+    <item>
+      <title>Music</title>
+      <link>//localhost:1313/entire-note/music_build/</link>
+      <pubDate>Wed, 07 Feb 2024 19:22:59 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/music_build/</guid>
+      <description>搭建本站音乐 #搭建过程绕了一些弯子，吃了前端的亏，主要借鉴了金圣皓，得知了目前主流的博客音乐依托于APlayer&amp;amp;Meting JS,前者是嵌入HTML的音乐组件库，后者是可用通过网易，QQ音乐等网站的音乐插件，本网站作为静态页面，故只需通过CDN引入即可
+网站搭建主题为Blowfish，在blog/layouts/shortcodes文件夹下添加album.html文件
+这里采用的是网易音乐的歌单，获取歌单id自行从&lt;?xml version=&#34;1.0&#34; standalone=&#34;no&#34;?&gt;&lt;!DOCTYPE svg PUBLIC &#34;-//W3C//DTD SVG 1.1//EN&#34; &#34;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&#34;&gt;网易云音乐歌单中获取
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/color-thief@2.2.5/js/color-thief.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;span style=&amp;#34;color:#111827&amp;#34;&amp;gt; &amp;lt;!--{{.Get 0}}作为歌单参数由引用组件处添加--&amp;gt; &amp;lt;meting-js server=&amp;#34;netease&amp;#34; type=&amp;#34;playlist&amp;#34; id=&amp;#34;{{.</description>
+      
+    </item>
+    
+    <item>
+      <title>本站Music搭建相关</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/music/</link>
+      <pubDate>Wed, 07 Feb 2024 19:22:59 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/music/</guid>
+      <description>搭建本站音乐 #搭建过程绕了一些弯子，吃了前端的亏，主要借鉴了金圣皓，得知了目前主流的博客音乐依托于APlayer&amp;amp;Meting JS,前者是嵌入HTML的音乐组件库，后者是可用通过网易，QQ音乐等网站的音乐插件，本网站作为静态页面，故只需通过CDN引入即可
+Meting Js参数,官方文档
+&amp;lt;!--MetingJS参数详情--&amp;gt; &amp;lt;!-- id=&amp;#39;外链播放器id&amp;#39;,必须参数 type=[song=单曲, playlist=歌单, album=专辑, search=搜索结果, artist=艺术家],必须参数 server=[netease=网易云音乐, tencent=QQ音乐, kugou=酷狗音乐, xiami=虾米音乐, baidu=百度音乐],必须参数 fixed=启用固定模式，固定在左下角,默认false mini=启用迷你模式,默认false preload=[none,metadata,auto] mutex=[互斥锁，默认true],默认false order=[random=随机播放,list=列表播放] loop=[all=全部循环, one=循环一次 ,none=不循环] volume=[音量，默认0.</description>
+      
+    </item>
+    
+    <item>
+      <title>音乐</title>
+      <link>//localhost:1313/music/</link>
+      <pubDate>Mon, 29 Jan 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/music/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>NetFlix和SpringCloudAlibaba</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%BC%94%E8%BF%9B/</link>
+      <pubDate>Fri, 26 Jan 2024 13:56:23 +0000</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%BC%94%E8%BF%9B/</guid>
+      <description>Spring Cloud Netflix 介绍Netflix套件中有Eureka、Ribbon、Hystrix、Zuul、Feign五个非常知名的开源项目，分别被用于服务治理、负载均衡、服务容错、服务网关、服务通信。
+2018年，Netflix套件中的开源项目陆续进入了维护模式。
+2020年12月22日，Spring Cloud 2020.0.0版本发布，该版本中移除了Netflix套件中的相关依赖。
+Spring Cloud Alibaba 介绍2018年7月，Spring Cloud Alibaba正式开源，进入Spring Cloud孵化器。2018年10月，Spring Cloud Alibaba发布开源后的第一个版本。
+Spring Cloud Alibaba提供的组件如下：
+Sentinel：阿里巴巴开源产品，不仅仅可以作为断路器，也支持流量控制和服务降级。Nacos：阿里巴巴开源产品，服务注册与服务发现，同时也可以作为配置中心。RocketMQ：阿里巴巴开源的分布式消息和流计算平台。Dubbo：阿里巴巴开源产品，高性能Java RPC框架，服务通信组件。Seata：阿里巴巴开源产品，一个易于使用的高性能微服务分布式事务解决方案。Alibaba Cloud ACM：其前身为淘宝内部配置中心Diamond，是一款应用配置中心产品，需付费。Alibaba Cloud OSS：阿里云对象存储OSS是一款海量、安全、低成本、高可靠的云存储服务，需付费。Alibaba Cloud SMS：阿里云短信服务，需付费。Alibaba Cloud SchedulerX：阿里中间件自研的基于Akka架构的新一代分布式任务调度平台，需付费。spring-cloud 和 spring-cloud-alibaba 的区别Spring Cloud：Spring 官方提供的分布式应用开发的一套共用模式，也可以理解成一套微服务开发的统一的抽象编程模型。Spring Cloud Netflix：基于 Spring Cloud 编程模型实现的微服务框架，是最早期的微服务框架。近年来，Netflix 宣布大多数组件停止维护。Spring Cloud Alibaba：Alibaba 提供的基于 Spring Cloud 编程模型实现的微服务框架，其所有组件都来自于阿里巴巴微服务技术，无论是解决方案完整性、技术成熟度、社区还是文档资料等都对国内开发者非常友好。spring-cloud是Spring官方提供的微服务开发工具。它基于Spring Boot构建，提供了一系列框架和工具帮助我们快速构建分布式系统中的微服务架构。spring-cloud主要包含以下组件:</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%BC%94%E8%BF%9B/featured.png" />
+    </item>
+    
+    <item>
+      <title>我的生日</title>
+      <link>//localhost:1313/life-about/birth/</link>
+      <pubDate>Wed, 15 Nov 2023 18:25:34 +0800</pubDate>
+      
+      <guid>//localhost:1313/life-about/birth/</guid>
+      <description>今天是我的生日 #其实早上起来都不记得我的生日了，但是微信还是有女朋友和妈妈和爸爸还有姐姐的关心问候。
+下雨的天气，在女朋友的催促下去拿了北校的快递，是花，我猜到了，但是打开还是惊艳到我了，白玫瑰真的太漂亮了！！！谢谢你我最爱的Miss Liu
+回来的时候，把花花立起来了，黄灯照起来真的太有氛围感了。
+最后收到了朋友的蛋糕，实在感动，但没说上几句话，很感动，谢谢大家😸🦢
+朋友送的蛋糕
+在雨中，我途径北校的荷塘。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/life-about/birth/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>区间个位和</title>
+      <link>//localhost:1313/algorithm/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/</link>
+      <pubDate>Tue, 14 Nov 2023 13:47:44 +0800</pubDate>
+      
+      <guid>//localhost:1313/algorithm/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/</guid>
+      <description>计算区间之间的所有数的个位数之和 #思路： 总体用数学办法，45循环，补齐不全的区间
+#include &amp;#34;class/head.h&amp;#34; //导入万能依赖 long long Sum(long long left,long long right,long long len) { long long left_sum=0,right_sum=0; long long left_len,right_len; left_len=right_len=0; if(left!=0)//计算左补齐 { left_sum=((left-1)*left)/2.0; left_len=left; } if(right!</description>
+      
+    </item>
+    
+    <item>
+      <title>数之和</title>
+      <link>//localhost:1313/algorithm/%E7%AE%97%E6%B3%95/%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Tue, 14 Nov 2023 13:47:44 +0800</pubDate>
+      
+      <guid>//localhost:1313/algorithm/%E7%AE%97%E6%B3%95/%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>题目：
+两数之和
+三数之和
+class Main{ //两数之和 public static int[] twoSum(int[] nums, int target) { //找出和为target的数组中元素的下标： HashMap&amp;lt;Integer,Integer&amp;gt; dic=new HashMap&amp;lt;&amp;gt;();//和 int index=0; int dicIndex=0; int len=nums.length; Set&amp;lt;Integer&amp;gt; list=new HashSet&amp;lt;&amp;gt;(); for (int i=0;i&amp;lt;len;i++){ dic.</description>
+      
+    </item>
+    
+    <item>
+      <title>Eureka</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/eureka/</link>
+      <pubDate>Sat, 11 Nov 2023 23:55:26 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/eureka/</guid>
+      <description>整个项目很简单，主要需要注意版本的问题,这也是微服务的主要问题
+启动成功
+还是贴一下maven好
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;parent&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.2&amp;lt;/version&amp;gt; &amp;lt;relativePath/&amp;gt; &amp;lt;!-- lookup parent from repository --&amp;gt; &amp;lt;/parent&amp;gt; &amp;lt;groupId&amp;gt;com.example&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;eureka&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;name&amp;gt;eureka&amp;lt;/name&amp;gt; &amp;lt;description&amp;gt;eureka&amp;lt;/description&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;java.</description>
+      
+    </item>
+    
+    <item>
+      <title>写点脚本</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E6%8E%A8%E9%80%81%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 11 Nov 2023 23:55:26 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E6%8E%A8%E9%80%81%E7%AC%94%E8%AE%B0/</guid>
+      <description>懒得点点了，写个脚本维护笔记
+目前来看效果还行</description>
+      
+    </item>
+    
+    <item>
+      <title>没备份笔记的后果</title>
+      <link>//localhost:1313/life-about/%E9%9A%8F%E8%AE%B0/</link>
+      <pubDate>Sat, 11 Nov 2023 10:52:20 +0800</pubDate>
+      
+      <guid>//localhost:1313/life-about/%E9%9A%8F%E8%AE%B0/</guid>
+      <description>由于之前Vscode误删这个博客的笔记了，现在又要从仓库拉原来的笔记，实在是烦心。
+现在总算知道备份的重要性了。
+开科技也不行，github是真慢啊！！！又要先fetch再push了。。。。
+龟祖宗，好了没啊！！！
+总算好咯</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/life-about/%E9%9A%8F%E8%AE%B0/featured.png" />
+    </item>
+    
+    <item>
+      <title>RabbitMq</title>
+      <link>//localhost:1313/entire-note/mq/</link>
+      <pubDate>Tue, 07 Nov 2023 20:52:20 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/mq/</guid>
+      <description>认识RabbitMQ #环境：ubangtu #访问协议： amqp
+了解安装（反正也记不住）：
+sudo apt install erlang sudo apt install rabbitmq-server sudo rabbitmqctl status sudo rabbitmq-plugins enable rabbitmq_management sudo rabbitmqctl add_user 用户名 密码 sudo rabbitmqctl set_user_tags admin administrator 设计架构图：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/mq/featured.png" />
+    </item>
+    
+    <item>
+      <title>Vue3 响应式Api开发笔记</title>
+      <link>//localhost:1313/entire-note/vue/</link>
+      <pubDate>Sat, 04 Nov 2023 11:31:54 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/vue/</guid>
+      <description>Vue3 响应式Api开发笔记 #目录结构： #用vite构建的Vue3目录结构：
+src:
+这里是我们要开发的目录，基本上要做的事情都在这个目录里。里面包含了几个目录及文件：
+assets: 放置一些图片，如logo等。 components: 目录里面放了一个组件文件，可以不用。 App.vue: 项目入口文件，我们也可以直接将组件写这里，而不使用 components 目录。 main.js: 项目的核心文件。 index.css: 样式文件。 static	静态资源目录，如图片、字体等。
+public	公共资源目录。
+package.json	项目配置文件。
+vue3创建应用 #实际案例 #语法： const app = Vue.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/vue/featured.png" />
+    </item>
+    
+    <item>
+      <title>搭建图床</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BA%8A/</link>
+      <pubDate>Fri, 03 Nov 2023 22:43:25 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BA%8A/</guid>
+      <description>通过GitHub+PicGo+CDN搭建自己的图床 #图床一般是指储存图片的服务器，有国内和国外之分。国外的图床由于有 空间距离等因素决定访问速度很慢影响图片显示速度。国内也分为单线空间、 多线空间和cdn加速三种。# CDN 是构建在数据网络上的一种分布式的内容分发网。 CDN 的作用是采用 流媒体服务器 集群技术，克服单机系统输出带宽及并发能力不足的缺点，可极大提升系统支持的 并发流数目，减少或避免 单点失效带来的不良影响。# github搭建仓库
+下载 PicGO 配置 CDN
+创建仓库 #PICGO #配置加速
+如何配置token？
+首先到github上选择生成自己的token：
+点击首页选择设置：
+下拉到develop settings
+选择下方生成GitHub token：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BA%8A/featured.png" />
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c&#43;&#43;/</link>
+      <pubDate>Fri, 27 Oct 2023 20:52:20 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c&#43;&#43;/</guid>
+      <description>C++实现数据结构和初步的认识 #鉴于未来数据结构和算法的实现我想通过 C++来实现，现在简要总结下 C++的常用方法和数据结构类型
+头文件和方法声明 #等同于 C 语言
+标准输入输出函数 #std::cout &amp;lt;&amp;lt; &amp;#34;Hello, World!&amp;#34; &amp;lt;&amp;lt; std::endl; 引入 using namespace std;这可以避免函数要不断的添加前缀
+using namespace std; ... int input; cout&amp;lt;&amp;lt;&amp;#34;Hello world&amp;#34;&amp;lt;&amp;lt;endl;//输出函数 cin&amp;gt;&amp;gt;input; printf(&amp;#34;%d&amp;#34;,input); .</description>
+      
+    </item>
+    
+    <item>
+      <title>friend</title>
+      <link>//localhost:1313/friend/</link>
+      <pubDate>Fri, 27 Oct 2023 20:52:20 +0800</pubDate>
+      
+      <guid>//localhost:1313/friend/</guid>
+      <description>网上的朋友们 #下一曲当你的站点失效时，本站会定期更新删除。与你分享我的眼睛Per aspera ad astra · 寻此苦旅 终达星辰金圣皓我喜欢听花开的声音，更想自由地深情地呼吸z3475泛 ACGN 爱好者，喜欢业余写点小作品改善生活AncientElement春江潮水连海平，海上明月共潮生Pinpe的云端一个属于自己的云朵。小棉尾巴关心前端技术、个人成长、女性主义和内容创作宁子博客人生得意须尽欢丨浅笑安然丨生活不止眼前的苟且，还有诗和远方草方块还没有名字的折腾人本站博客仓库地址：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/friend/featured.png" />
+    </item>
+    
+    <item>
+      <title>面试题</title>
+      <link>//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%9F%90%E4%B8%AA%E7%BE%A4%E9%87%8C%E7%9A%84/</link>
+      <pubDate>Wed, 25 Oct 2023 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%9F%90%E4%B8%AA%E7%BE%A4%E9%87%8C%E7%9A%84/</guid>
+      <description>题目 #难点：合并
+解决方法：
+实体类：
+package com.atguigu; import lombok.AllArgsConstructor; import lombok.Data; /** * com.atguigu.ItemDO * * @author 春江花朝秋月夜 * @since 2023/10/25 14:45 */ @Data @AllArgsConstructor public class ItemDO { int id;//10011 int type;//具体不确定 double score;//[0，1000] @Override public String toString() { return &amp;#34;ItemDO{&amp;#34; + &amp;#34;id=&amp;#34; + id + &amp;#34;, type=&amp;#34; + type + &amp;#34;, score=&amp;#34; + score + &amp;#39;\n&amp;#39;+ &amp;#39;}&amp;#39;; } } 方法：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%9F%90%E4%B8%AA%E7%BE%A4%E9%87%8C%E7%9A%84/featured.png" />
+    </item>
+    
+    <item>
+      <title>类加载</title>
+      <link>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E7%B1%BB%E5%8A%A0%E8%BD%BD/</link>
+      <pubDate>Tue, 24 Oct 2023 13:58:54 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E7%B1%BB%E5%8A%A0%E8%BD%BD/</guid>
+      <description>CAFE BABE -&amp;gt;表示这是一个.class文件
+类加载机制 #类加载的条件：
+使用new关键字创建对象时 使用某个类的静态成员（包括方法和字段）的时候（当然，final类型的静态字段有可能在编译的时候被放到了当前类的常量池中，这种情况下是不会触发自动加载的） 使用反射对类信息进行获取的时候（之前的数据库驱动就是这样的） 加载一个类的子类时 加载接口的实现类，且接口带有default的方法默认实现时 字节码指令 #先返回结果再进行自增或者先自增再给出结果
+Asm字节码框架 #劝退，还是算了。。。
+Spring实现的CGLib就是基于这个实现的。
+类加载机制 #</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E7%B1%BB%E5%8A%A0%E8%BD%BD/featured.png" />
+    </item>
+    
+    <item>
+      <title>元空间和引用方式</title>
+      <link>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%85%83%E7%A9%BA%E9%97%B4/%E5%85%83%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Tue, 24 Oct 2023 13:28:04 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%85%83%E7%A9%BA%E9%97%B4/%E5%85%83%E7%A9%BA%E9%97%B4/</guid>
+      <description>引用类型 #强引用：new Object(); #JVM不会随意回收强引用对象
+相反，将会尝试回收软引用
+软引用： #SoftReference&amp;lt;Object&amp;gt; soft=new SoftReference(); 设置内存大小：-Xms -Xmx
+ReferenceQueue&amp;lt;Object&amp;gt; queue = new ReferenceQueue&amp;lt;&amp;gt;(); SoftReference&amp;lt;Object&amp;gt; reference = new SoftReference&amp;lt;&amp;gt;(new Object(), queue); System.out.println(reference); try{ List&amp;lt;String&amp;gt; list = new ArrayList&amp;lt;&amp;gt;(); while (true) list.</description>
+      
+    </item>
+    
+    <item>
+      <title>全部</title>
+      <link>//localhost:1313/all/</link>
+      <pubDate>Sat, 21 Oct 2023 20:52:20 +0800</pubDate>
+      
+      <guid>//localhost:1313/all/</guid>
+      <description>全部文章MySQL一些常识和函数15 October 2024&amp;middot;2 分钟Oracle数据库15 October 2024&amp;middot;4 分钟Ubuntu操作系统15 October 2024&amp;middot;1 分钟程序设计中使用到的一些图15 October 2024&amp;middot;1 分钟面试经历15 October 2024&amp;middot;2 分钟面试Help30 April 2024&amp;middot;1 分钟帮助文档代码随想录算法合辑19 March 2024&amp;middot;1 分钟算法抽象数据类型ADT18 March 2024&amp;middot;2 分钟要求熟记Mysql-Redis15 March 2024&amp;middot;8 分钟主从部分Mac体验版14 March 2024&amp;middot;1 分钟笔记爬虫浅记13 March 2024&amp;middot;2 分钟笔记Waline评论系统11 March 2024&amp;middot;1 分钟笔记计算机科学基础9 March 2024&amp;middot;3 分钟要求熟记使用主从模式搭建一个Socket网络通信模型6 March 2024&amp;middot;1 分钟Nio微服务基础知识5 March 2024&amp;middot;2 分钟微服务微信登录2 March 2024&amp;middot;4 分钟Oauth2自用的Vscode个人觉得还算耐看的主题和字体以及编码习惯2 March 2024&amp;middot;1 分钟笔记Spring-Security23 February 2024&amp;middot;1 分钟SpringDocker8 February 2024&amp;middot;1 分钟笔记Music7 February 2024&amp;middot;1 分钟笔记本站Music搭建相关7 February 2024&amp;middot;1 分钟笔记音乐29 January 2024NetFlix和SpringCloudAlibaba26 January 2024&amp;middot;1 分钟微服务我的生日15 November 2023&amp;middot;1 分钟生活区间个位和14 November 2023&amp;middot;1 分钟Leetcode数之和14 November 2023&amp;middot;1 分钟LeetcodeEureka11 November 2023&amp;middot;1 分钟微服务写点脚本11 November 2023&amp;middot;1 分钟随机没备份笔记的后果11 November 2023&amp;middot;1 分钟随记RabbitMq7 November 2023&amp;middot;2 分钟消息队列Vue3 响应式Api开发笔记4 November 2023&amp;middot;2 分钟Vue搭建图床3 November 2023&amp;middot;1 分钟杂记C++27 October 2023&amp;middot;6 分钟语言friend27 October 2023&amp;middot;1 分钟朋友们面试题25 October 2023&amp;middot;1 分钟面试题类加载24 October 2023&amp;middot;1 分钟虚拟机元空间和引用方式24 October 2023&amp;middot;1 分钟虚拟机Latex语法19 October 2023&amp;middot;1 分钟LatexJvm12 October 2023&amp;middot;2 分钟虚拟机垃圾回收机制12 October 2023&amp;middot;1 分钟虚拟机状态机12 October 2023&amp;middot;1 分钟硬件语言学习计划10 October 2023&amp;middot;1 分钟规划并发进阶9 October 2023&amp;middot;4 分钟并发编程Java-Concurrent9 October 2023&amp;middot;3 分钟并发编程如何通过hugo搭建自己的博客3 October 2023&amp;middot;1 分钟杂记科学上网3 October 2023&amp;middot;1 分钟杂记对象间的关系3 October 2023&amp;middot;1 分钟Java SE关键字3 October 2023&amp;middot;5 分钟Java SE实例化Node3 October 2023&amp;middot;1 分钟Java SE数据结构篇3 October 2023&amp;middot;1 分钟算法应该没人来这里吧3 October 2023&amp;middot;1 分钟ThreadLocal3 October 2023&amp;middot;2 分钟Java SERedis3 October 2023&amp;middot;2 分钟缓存Hello Friend3 October 2003&amp;middot;1 分钟Post1 January 0001&amp;middot;52 分钟1 January 0001&amp;middot;1 分钟1 January 0001&amp;middot;1 分钟Docker1 January 0001&amp;middot;7 分钟Mysql1 January 0001&amp;middot;6 分钟Netty1 January 0001&amp;middot;17 分钟NIO1 January 0001&amp;middot;22 分钟RabbitMq1 January 0001&amp;middot;7 分钟SpringCloud 11 January 0001&amp;middot;9 分钟SpringCloud 21 January 0001&amp;middot;11 分钟SpringCloud 31 January 0001&amp;middot;10 分钟博客统计创建型1 January 0001&amp;middot;4 分钟二分法1 January 0001&amp;middot;1 分钟代码随想录封面测试1 January 0001复杂度1 January 0001&amp;middot;1 分钟代码随想录哈希篇1 January 0001&amp;middot;2 分钟代码随想录结构型1 January 0001&amp;middot;5 分钟链表的基本操作1 January 0001&amp;middot;1 分钟代码随想录链表篇1 January 0001&amp;middot;3 分钟代码随想录螺旋矩阵1 January 0001&amp;middot;2 分钟代码随想录面向对象设计原则1 January 0001&amp;middot;4 分钟书影音行为型1 January 0001&amp;middot;7 分钟移除元素1 January 0001&amp;middot;1 分钟代码随想录有序数组的平方1 January 0001&amp;middot;1 分钟代码随想录长度最小的数组1 January 0001&amp;middot;2 分钟代码随想录</description>
+      
+    </item>
+    
+    <item>
+      <title>Latex语法</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/latex/</link>
+      <pubDate>Thu, 19 Oct 2023 15:55:16 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/latex/</guid>
+      <description>环境设置： #\begin{center} \end{center} 这样就是一个环境，所有的都是隔离的。
+头部文件 #\documentclass{setting} \usepackage[utf8]{inputenc} \usepackage[T1]{fontenc} \usepackage{graphicx} \usepackage[]{setspace} 在头部设置文件排版样式，导入依赖包，基本在本地
+运行部分 #\begin{document} 选择合适的编译器才可以编译，否则出错
+导入自定义式样 #更新命令：texhash 式样文件的后缀：.cls文件，在里面自定义命令和样式实现排版布局
+例如下面：
+\newcommand{\role}[2]{ {\par \textit{#1} ~ #2 \par} \vspace{0.5ex} } \newcommand{\biInfo}[2]{ {#1 \quad #2} } \newcommand{\tripleInfo}[3]{ {#1 \quad #2 \quad #3} } </description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/latex/featured.png" />
+    </item>
+    
+    <item>
+      <title>Jvm</title>
+      <link>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/jvm/</link>
+      <pubDate>Thu, 12 Oct 2023 23:51:04 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/jvm/</guid>
+      <description>概述 #JVM 是模拟物理机实现的将 javac 编译为.class 文件，jvm 支持平台无关性。 class 文件通过类加载器-》解释器-》硬件沟通
+Jvm 基于 HotSpot 虚拟机架构同时也是基于栈实现的。与 C 语言不同，不同架构的操作系统编译输出的文件不同，jvm 编译后产生的 文件完全相同。
+由于执行一段程序需要不断地编译和反编译，将热点执行的代买柜内为热点代码再转换为机器码提高执行效率。同时 jdk1.2 之后支持使用 JNI 来 调用 C/C++代码提升代码执行效率
+指令 #基本数据结构：堆栈+队列
+常见的编译命令：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/jvm/featured.png" />
+    </item>
+    
+    <item>
+      <title>垃圾回收机制</title>
+      <link>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/</link>
+      <pubDate>Thu, 12 Oct 2023 23:51:04 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/</guid>
+      <description>垃圾回收机制 #引用计数法 #创建引用变量
+循环引用,当对象成为null就没办法了
+可达性分析算法：
+最终判定过程，此过程可以最后挽留对象
+重写finalize方法，最后可以救赎被gc的对象
+比如下面这个情况
+注意：
+同时，这个方法只能生效一次，躲得过初一躲不过十五
+分代收集机制: #方法区使用永久代实现
+垃圾收集也分为： Minor GC - 次要垃圾回收，主要进行新生代区域的垃圾收集。
+触发条件：新生代的Eden区容量已满时。
+Major GC - 主要垃圾回收，主要进行老年代的垃圾收集。
+Full GC - 完全垃圾回收，对整个Java堆内存和方法区进行垃圾回收。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/featured.png" />
+    </item>
+    
+    <item>
+      <title>状态机</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/vhdl/</link>
+      <pubDate>Thu, 12 Oct 2023 19:01:39 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/vhdl/</guid>
+      <description>有限状态机 #寄存器和组合时序逻辑电路构成硬件时序逻辑电路
+特点：只能在时钟沿发生跳变时才能完成状态转移，状态机可以在时钟跳变时完成复杂的任务。
+状态机的结构 #状态寄存器由一组寄存器构成,n个寄存器可存储2^n个状态
+输出取决于状态和输入时，这样的状态机称为Mealy状态机，只和当前状态有关的称为Moore状态机
+描述有限状态机的方法： always语句和case语句</description>
+      
+    </item>
+    
+    <item>
+      <title>学习计划</title>
+      <link>//localhost:1313/tasks/</link>
+      <pubDate>Tue, 10 Oct 2023 18:05:56 +0800</pubDate>
+      
+      <guid>//localhost:1313/tasks/</guid>
+      <description>必须完成！ #1:主线学习内容，消息队列，操作系统，计算机网络（理论），分布式微服务，安全框架（Spring-Security)
+2:支线学习内容，RBAC权限控制，防XSS攻击，JVM虚拟机， ElasticSearch搜索引擎（ELK）。Zookeeper,Dubbo。容器技术Docker，K8s。
+3：深入了解（底层）：Redis底层数据结构与实现，Redis集群，哨兵模式，Redis协议，Mysql隔离级别，日志，锁，事务
+2024.2.23日，上述70%完成，接下来应该完成：2024.3.20日，需要学习2，3,学习算法，修改简历&lt;?xml version=&#34;1.0&#34; standalone=&#34;no&#34;?&gt;&lt;!DOCTYPE svg PUBLIC &#34;-//W3C//DTD SVG 1.1//EN&#34; &#34;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&#34;&gt;紧要任务 代码随想录-算法-计算机知识复习&lt;?xml version=&#34;1.0&#34; standalone=&#34;no&#34;?&gt;&lt;!DOCTYPE svg PUBLIC &#34;-//W3C//DTD SVG 1.1//EN&#34; &#34;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&#34;&gt;学期任务 大厂毕业完成以下任务简历投递算法学习分布式事务Seata学习Redis集群+Mysql索引学习计算机网络专业课学习TCP/UDP图集 二次元赛高此生无悔二次元2023.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/tasks/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>并发进阶</title>
+      <link>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E8%BF%9B%E9%98%B6/</link>
+      <pubDate>Mon, 09 Oct 2023 20:38:19 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E8%BF%9B%E9%98%B6/</guid>
+      <description>线程池 #new Thread缺点：频繁创建和销毁，浪费了线程资源，短时间创建大量线程和销毁 线程池是有限可重复使用的线程，用完需要归还
+//构造方法，含有七个参数 public ThreadPoolExecutor(int corePoolSize,//核心线程池大小 int maximumPoolSize,//最大线程池大小 long keepAliveTime,//线程最大空闲时间 TimeUnit unit,//最大空闲时间单位 BlockingQueue&amp;lt;Runnable&amp;gt; workQueue//线程等待队列，当超出最大容量时，任务进入等待队列) { this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, Executors.defaultThreadFactory(),//线程创建工厂，可自定义 defaultHandler//拒绝策略，实在不能加入新的任务时，拒绝任务); } 根据CPU类型分配线程池大小 #ThreadPoolExecutor #public static void main(String[] args) throws InterruptedException { ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 4, //2个核心线程，最大线程数为4个 3, TimeUnit.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E8%BF%9B%E9%98%B6/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Java-Concurrent</title>
+      <link>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E5%B9%B6%E5%8F%91/</link>
+      <pubDate>Mon, 09 Oct 2023 19:49:34 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E5%B9%B6%E5%8F%91/</guid>
+      <description>Java 并发编程 #轻量级锁： #检查当前对象的mark word是否有被其他线程占用，假如没有就会在当前栈帧里面建立一个 锁记录，复制并存储当前对象的mark word 信息。
+不像重量级锁需要向系统申请互斥量，
+CAS（无锁算法） #显然，当cas失败的时候，说明有线程进入了这个同步代码块，这个时候，虚拟机将会检查 当前对象的mark word是否指向当前对象的栈帧，是的话就说明当前已经获得锁，否则不是-》退化为重量级锁(不可逆) 解锁时，同样使用CAS算法操作，同时唤醒挂起的线程
+偏向锁 #当某个锁频繁的被同一个线程获取，对轻量级锁进行优化，所以偏向锁专门为单个线程服务，此时，无须再进行CAS操作，当其他线程 又开始抢锁，偏向锁可能退化为轻量级锁。注意当调用对象的hashCode（）方法，由于mark word 数据结构无法 保存hash值，偏向锁直接退化为轻量级锁。
+锁的退化不可逆
+锁消除和锁优化 #代码块中有可能不会总是出现请求锁和释放锁的问题，（比如循环中加锁），此时锁为了优化出现锁消除和锁优化
+Java内存模型（JMM） #主内存： 存放对象实例的部分 工作内存：虚拟机栈的部分，放入cpu的高速缓存里面。 自增操作不是由一个指令实现的！！！包括获取，修改和保存</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E5%B9%B6%E5%8F%91/featured.png" />
+    </item>
+    
+    <item>
+      <title>如何通过hugo搭建自己的博客</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Tue, 03 Oct 2023 23:44:01 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/</guid>
+      <description>如何通过Hugo这个框架来搭建一款属于自己的博客呢？ #观前提醒：这篇笔记借鉴了下面两个作者：
+一是：小棉尾巴
+事件契机 #我其实原本就知道github的pages自动部署博客功能，当时大二不熟练，今天目睹专业大佬的博客，自然也就重新搞起来了。
+如下就是大佬的博客（这个主题本来尝试用，后续发现比较花哨就不采用了）
+本人搭建的博客：
+第一步下载HuGo框架： #以Windows为例：只需打开CMD执行下面这个命令
+winget install Hugo.Hugo.Extended 等待下载完成重启Shell命令窗口即可，Hugo将会自动配置环境变量。
+检查是否安装成功：
+hugo version 第二部创建Hugo博客项目 #只需要在文件夹下面新建终端使用如下命令，hugo将会自动创建你的项目名称文件夹 ，同时弹出一个主题链接
+hugo new site +你的项目名称 现在你需要进入你的项目也就是命令： cd 你的项目名称</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>科学上网</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/vpn-ssr/</link>
+      <pubDate>Tue, 03 Oct 2023 22:43:25 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/vpn-ssr/</guid>
+      <description>先放一张跳墙成功的画面： #科学上网难吗？ #结论：很简单！！！
+首先是我在配置代理时候发现的几个好的站点：如下 #科学上网主要有两个代理方法，但实际内核应该是一样的：
+这里有关于两个不同的翻墙方法的说明链接 #第一个：
+第二个：
+参考链接：SSR配置说明 ssr链接方式
+如何翻墙啊，说了那么多。 #第一步：下载 #下载链接 蓝色款（不推荐，本文也不采用）：ShadowsocksR然后点击zip下载即可。ss的好处是没被墙，可以直接到git上下载。
+红色款（强烈推荐！！！）：这里我直接放上zip，因为国内无法下载，我已经提前翻墙下载好咯。 #下好后： #先复制下面的链接，然后点击ShadowssocksR-dotnet4.0.exe！！！！ #首先准备好ssr链接。这个方法最简单。 #ssr://Y20xLWhrLmh1dGFvbm9kZTIudG9wOjEyNDA1OmF1dGhfYWVzMTI4X3 NoYTE6Y2hhY2hhMjAtaWV0ZjpodHRwX3NpbXBsZTpTSFZVWVc5RGJHOTFaQS8_b 2Jmc3BhcmFtPU16WmhNV0V6TWpVd05TNXRhV055YjNOdlpuUXVZMjl0JnByb3RvcGFyYW0 9TXpJMU1EVTZTSEF6VlVVNE5YTmhWMjl2UjFOTlJnJnJlbWFya3M9NmFhWjVyaXZJQzBnU1VWUVRDQXRJ Rk5UTDFOVFVpQXRJREExJmdyb3VwPTVhU0g1NVNvVVZIdnZKb3pORFF6T1RVMk5qRXk 这里我们选择用SSR,影梭的粉红色飞机。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/vpn-ssr/featured.png" />
+    </item>
+    
+    <item>
+      <title>对象间的关系</title>
+      <link>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/object/%E5%AF%B9%E8%B1%A1%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
+      <pubDate>Tue, 03 Oct 2023 20:53:21 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/object/%E5%AF%B9%E8%B1%A1%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
+      <description>1 综述 在Java中对象与对象的关系总体分为四类，分别是：依赖、关联、聚合和组合。
+（1）依赖(Dependency)关系是类与类之间的联接。依赖关系表示一个类依赖于另一个类的定义，一般而言，依赖关系在Java语言中体现为局域变量、方法的形参，或者对静态方法的调用。 （2）关联(Association）关系是类与类之间的联接，它使一个类知道另一个类的属性和方法。关联可以是双向的，也可以是单向的。在Java语言中，关联关系一般使用成员变量来实现 （3）聚合(Aggregation) 关系是关联关系的一种，是强的关联关系。聚合是整体和个体之间的关系 （4）组合(Composition) 关系是关联关系的一种，是比聚合关系强的关系。它要求普通的聚合关系中代表整体的对象负责代表部分对象的生命周期，组合关系是不能共享的
+依赖： #个类A使用到了另一个类B，而这种使用关系是具有偶然性的、临时性的、非常弱的，但是B类的变化会影响到A
+关联： #关联是一种“拥有”的关系。表现在代码上，就是一个类包含另一个类的实例，通常表现为被关联类以类属性的形式出现在关联类的类定义中，也可以表现为关联类引用了一个类型为被关联类的全局变量。关联可以使单向的，也可以使双向的。依赖和关联的区别在于依赖是使用，关联是拥有.
+聚合 #聚合是关联关系的一种，它是一种强关联关系（has-a）;聚合关系是整体和个体/部分之间的关系;关联关系的两个类处于同一个层次上,而聚合关系的两个类处于不同的层次上,一个是整体,一个是个体/部分;在聚合关系中,代表个体/部分的对象有可能会被多个代表整体的对象所共享;表现在代码层面上就是在构造器初始化时将两个类关联起来
+组合 #组合也是关联关系的一种（is-a）,但它是比聚合关系更强的关系.组合关系要求聚合关系中代表整体的对象要负责代表个体/部分的对象的整个生命周期;组合关系不能共享;在组合关系中,如果代表整体的对象被销毁或破坏,那么代表个体/部分的对象也一定会被销毁或破坏,而聚在合关系中,代表个体/部分的对象则有可能被多个代表整体的对象所共享,而不一定会随着某个代表整体的对象被销毁或破坏而被销毁或破坏;</description>
+      
+    </item>
+    
+    <item>
+      <title>关键字</title>
+      <link>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/words/</link>
+      <pubDate>Tue, 03 Oct 2023 20:53:12 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/words/</guid>
+      <description>Java中常用的关键字有以下分类： 访问控制 private protected public
+类,方法和变量修饰符 abstract class extends final implements interface native new static strictfp synchronized transient volatile
+程序控制 break continue return do while if else for instanceof switch case default</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/words/featured.png" />
+    </item>
+    
+    <item>
+      <title>实例化Node</title>
+      <link>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/node/%E5%AE%9E%E4%BE%8B%E5%8C%96node/</link>
+      <pubDate>Tue, 03 Oct 2023 20:52:56 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/node/%E5%AE%9E%E4%BE%8B%E5%8C%96node/</guid>
+      <description>如何从 Java 中的 LinkedList 类外部声明 Node 类型？ #标签 java linked-list 如何声明 Node 类型的变量？ Node是LinkedList的内部类，在我正在编写的程序的main方法中，我想创建一个Node变量。但在下面代码片段的最后一行中，我收到错误消息“Nose 在 LinkedList 中具有私有(private)访问权限”。为什么我不能使用 Node 类型？
+import java.util.LinkedList; public class MinSplit { public static long leastAmount; public static void main(String args[]) { LinkedList list = new LinkedList(); LinkedList.</description>
+      
+    </item>
+    
+    <item>
+      <title>数据结构篇</title>
+      <link>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/datastruct/</link>
+      <pubDate>Tue, 03 Oct 2023 20:52:20 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/datastruct/</guid>
+      <description>数组： #1 public class Demo1_Array { 2 public static void main(String[] args) { 3 String [] array=new String[5];//需要初始化长度 4 array[0]=&amp;#34;hello&amp;#34;; 5 array[1]=&amp;#34;world&amp;#34;; 6 array[4]=&amp;#34;Mufasa&amp;#34;; 7 // array[5]=&amp;#34;right or not&amp;#34;;//ArrayIndexOutOfBoundsException 8 for(String str:array){ 9 System.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/datastruct/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>应该没人来这里吧</title>
+      <link>//localhost:1313/info/</link>
+      <pubDate>Tue, 03 Oct 2023 20:52:20 +0800</pubDate>
+      
+      <guid>//localhost:1313/info/</guid>
+      <description>Hi ，你好！ #你好，我是春江花朝秋月夜，我是这个博客的作者。我这样做是为了记录之前学习的笔记 因为我基本很难记住我学过的东西&amp;hellip;. 我关心后端技术，也喜欢做一些前端效果，我偶尔写一些笔记和心得并且定期分享到哔哩哔哩和我的语雀频道 世界充满了很多不确定的东西，希望大家保持独立的思考。如果你好奇我目前在做的事情,也可以了解更多关于我的信息。
+这个博客网站在下面的支持下完成
+白天/夜晚 模式, 依赖于UI设计 非常感谢下面的几个网站支持我Inter UI font,由Rasmus Andersson制作 非常感谢这位提供的帮助PrismJS 以及我同专业的前辈：AncientElement 所以，希望你在这儿可以玩的开心！！！
+本人简历： #107706430_p0_hu46370d4ccd3481872546da16224d0daa_1972225_288x288_fill_box_center_3</description>
+      
+    </item>
+    
+    <item>
+      <title>ThreadLocal</title>
+      <link>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/threadlocal/</link>
+      <pubDate>Tue, 03 Oct 2023 20:51:27 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/threadlocal/</guid>
+      <description>特点：线程隔离，相互是隔离的，不影响的,每个线程都自己玩自己的，只操作自己的单独的变量副本
+内部维护的是ThreadLocalMap，所以有key和value
+当key指向的值为null时，value不被清理，由于key是弱引用，此时就会造成内存泄露，所以必须要通过ThreadLocal里面的remove方法手动删除值，避免内存泄露。
+ThreadLocalMap里面面由一个个由数组组成的key-value，组成了Entry 由ThreadLocal来设置值，删除值
+弱引用非常容易GC，很容易造成内存泄露，所以需要将key为null的entry清除
+引用关系：Thread-&amp;gt; ThreadLocal-&amp;gt;Entry（弱）-&amp;gt;key（弱）-&amp;gt;value(强)（不清除时容易发生内存泄露）
+//内部类，实=实现 static ThreadLocalMap createInheritedMap(ThreadLocalMap parentMap) { return new ThreadLocalMap(parentMap); } static class ThreadLocalMap { static class Entry extends WeakReference&amp;lt;ThreadLocal&amp;lt;?&amp;gt;&amp;gt; { /** The value associated with this ThreadLocal.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/javase/threadlocal/featured.png" />
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E7%BC%93%E5%AD%98/</link>
+      <pubDate>Tue, 03 Oct 2023 20:31:04 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E7%BC%93%E5%AD%98/</guid>
+      <description>Redis学习： #通用命令 #不要在主节点用：keys param 命令来查询，这查询速率很慢，单线程将会被阻塞 del param（可以是多个参数） :删除指定的key exists param(判断key是否存在) expire key time :设置有效期时间 ttl key :查看key的有效期
+String类型 #最简单的Redis数据类型，value：string,int,float；最大空间不超过512M set key value get key
+Mset 批量 添加key-value</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E7%BC%93%E5%AD%98/featured.png" />
+    </item>
+    
+    <item>
+      <title>Hello Friend</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/post/</link>
+      <pubDate>Fri, 03 Oct 2003 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/post/</guid>
+      <description>我的名字是春江花朝秋月夜，我是这个博客的作者。我这样做是为了记录之前学习的笔记，这样很有成就感。 我们都知道在网络上开始做一些事情有多难，尤其是现在。但是，为了自己的头发没有白掉，加油吧，大家！
+— 春江花朝秋月夜 S01E01</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/post/featured.png" />
+    </item>
+    
+    <item>
+      <title></title>
+      <link>//localhost:1313/doc/cpp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/cpp/</guid>
+      <description>C++提高编程 #本阶段主要针对C++==泛型编程==和==STL==技术做详细讲解，探讨C++更深层的使用 1 模板 #1.1 模板的概念 #模板就是建立通用的模具，大大提高复用性
+模板的特点：
+模板不可以直接使用，它只是一个框架 模板的通用并不是万能的 1.2 函数模板 #C++另一种编程思想称为 ==泛型编程== ，主要利用的技术就是模板
+C++提供两种模板机制:函数模板和类模板
+1.2.1 函数模板语法 #函数模板作用：
+建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个虚拟的类型来代表。
+语法：
+template&amp;lt;typename T&amp;gt; 函数声明或定义 解释：</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>//localhost:1313/interview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/interview/</guid>
+      <description>许利伟 #</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/</guid>
+      <description>发誓： #本人将会参加校招和研究生考试中，为之努力！谦虚向学而不是三天打鱼两天晒网</description>
+      
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>//localhost:1313/doc/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/docker/</guid>
+      <description>Docker容器技术 #Docker是一门平台级别的技术，涉及的范围很广，所以，在开始之前，请确保你完成：Java SpringBoot 篇（推荐完成SpringCloud篇再来）视频教程及之前全部路线，否则学习会非常吃力，另外推荐额外掌握：《计算机网络》、《操作系统》相关知识。学一样东西不能完全靠记忆来完成，而是需要结合自己所学的基础知识加以理解，一般来说，单凭记忆能够掌握的东西往往是最廉价的。
+**Docker官网：**https://www.docker.com
+**课前准备：**配置2C2G以上Linux服务器一台，云服务器、虚拟机均可。
+容器技术入门 #随着时代的发展，Docker也逐渐走上了历史舞台，曾经我们想要安装一套环境，需要花费一下午甚至一整天来配置和安装各个部分（比如运行我们自己的SpringBoot应用程序，可能需要安装数据库、安装Redis、安装MQ等，各种各样的环境光是安装就要花费很多时间，真的是搞得心态爆炸），而有了Docker之后，我们的程序和环境部署就变得非常简单了，我们只需要将这些环境一起打包成一个镜像。而到服务器上部署时，可以直接下载镜像实现一键部署，是不是很方便？
+包括我们在学习SpringCloud需要配置的各种组件，可能在自己电脑的环境中运行会遇到各种各样的问题（可能由于电脑上各种环境没配置，导致无法运行），而现在只需要下载镜像就能直接运行，所有的环境全部在镜像中配置完成，开箱即用。
+真的有这么神奇吗？我们来试试看。
+环境安装和部署 #首先我们还是先将Docker环境搭建好（建议和我同一个环境，不然出了问题只能自己想办法了），这里我们使用：
+Ubuntu 22.04 操作系统 Docker分为免费的CE（Community Edition）社区版本和EE（Enterprise Edition）企业级付费版本，所以我们这里选择docker-ce进行安装。官方安装文档：https://docs.docker.com/engine/install/ubuntu/
+首先安装一些工具：
+sudo apt-get install ca-certificates curl gnupg lsb-release 不过在Ubuntu22.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/doc/docker/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>//localhost:1313/doc/mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/mysql/</guid>
+      <description>MySQL高级 #在JavaWeb阶段，我们初步认识了MySQL数据库，包括一些基本操作，比如创建数据库、表、触发器，以及最基本的增删改查、事务等操作。而在此阶段，我们将继续深入学习MySQL，了解它的更多高级玩法，也相当于进行复习。
+函数 #其实函数我们在之前已经接触到一部分了，在JavaWeb阶段，我们了解了聚集函数，聚集函数一般用作统计，包括：
+count([distinct]*) 统计所有的行数（distinct表示去重再统计，下同） count([distinct]列名) 统计某列的值总和 sum([distinct]列名) 求一列的和（注意必须是数字类型的） avg([distinct]列名) 求一列的平均值（注意必须是数字类型） max([distinct]列名) 求一列的最大值 min([distinct]列名) 求一列的最小值 比如我们需要计算某个表一共有多少行：
+SELECT COUNT(*) FROM student 通过使用COUNT聚集函数，就可以快速统计并得到结果，比如我们想计算某一列上所有数字的和：
+SELECT SUM(sid) FROM student 通过SUM聚集函数，就可以快速计算每一列的和，实际上这些函数都是由系统提供的函数，我们可以直接使用。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/doc/mysql/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Netty</title>
+      <link>//localhost:1313/doc/netty/netty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/netty/netty/</guid>
+      <description>Netty框架 #前面我们学习了Java为我们提供的NIO框架，提供使用NIO提供的三大组件，我们就可以编写更加高性能的客户端/服务端网络程序了，甚至还可以自行规定一种通信协议进行通信。
+NIO框架存在的问题 #但是之前我们在使用NIO框架的时候，还是发现了一些问题，我们先来盘点一下。
+客户端关闭导致服务端空轮询 #可能在之前的实验中，你发现了这样一个问题：
+当我们的客户端主动与服务端断开连接时，会导致READ事件一直被触发，也就是说selector.select()会直接通过，并且是可读的状态，但是我们发现实际上读到是数据是一个空的（上面的图中在空轮询两次后抛出异常了，也有可能是无限的循环下去）所以这里我们得稍微处理一下：
+} else if(key.isReadable()) { SocketChannel channel = (SocketChannel) key.channel(); ByteBuffer buffer = ByteBuffer.allocate(128); //这里我们需要判断一下，如果read操作得到的结果是-1，那么说明服务端已经断开连接了 if(channel.read(buffer) &amp;lt; 0) { System.out.println(&amp;#34;客户端已经断开连接了：&amp;#34;+channel.getRemoteAddress()); channel.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/doc/netty/netty/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>NIO</title>
+      <link>//localhost:1313/doc/netty/nio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/netty/nio/</guid>
+      <description>NIO基础 #**注意：**推荐完成JavaSE篇、JavaWeb篇的学习再开启这一部分的学习，如果在这之前完成了JVM篇，那么看起来就会比较轻松了。
+在JavaSE的学习中，我们了解了如何使用IO进行数据传输，Java IO是阻塞的，如果在一次读写数据调用时数据还没有准备好，或者目前不可写，那么读写操作就会被阻塞直到数据准备好或目标可写为止。Java NIO则是非阻塞的，每一次数据读写调用都会立即返回，并将目前可读（或可写）的内容写入缓冲区或者从缓冲区中输出，即使当前没有可用数据，调用仍然会立即返回并且不对缓冲区做任何操作。
+NIO框架是在JDK1.4推出的，它的出现就是为了解决传统IO的不足，这一期视频，我们就将围绕着NIO开始讲解。
+缓冲区 #一切的一切还要从缓冲区开始讲起，包括源码在内，其实这个不是很难，只是需要理清思路。
+Buffer类及其实现 #Buffer类是缓冲区的实现，类似于Java中的数组，也是用于存放和获取数据的。但是Buffer相比Java中的数组，功能就非常强大了，它包含一系列对于数组的快捷操作。
+Buffer是一个抽象类，它的核心内容：
+public abstract class Buffer { // 这四个变量的关系: mark &amp;lt;= position &amp;lt;= limit &amp;lt;= capacity // 这些变量就是Buffer操作的核心了，之后我们学习的过程中可以看源码是如何操作这些变量的 private int mark = -1; private int position = 0; private int limit; private int capacity; // 直接缓冲区实现子类的数据内存地址（之后会讲解） long address; 我们来看看Buffer类的子类，包括我们认识到的所有基本类型（除了 boolean类型之外）：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/doc/netty/nio/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>RabbitMq</title>
+      <link>//localhost:1313/doc/rabbitmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/rabbitmq/</guid>
+      <description>消息队列 #经过前面的学习，我们已经了解了我们之前的技术在分布式环境下的应用，接着我们来看最后一章的内容。
+那么，什么是消息队列呢？
+我们之前如果需要进行远程调用，那么一般可以通过发送HTTP请求来完成，而现在，我们可以使用第二种方式，就是消息队列，它能够将发送方发送的信息放入队列中，当新的消息入队时，会通知接收方进行处理，一般消息发送方称为生产者，接收方称为消费者。
+这样我们所有的请求，都可以直接丢到消息队列中，再由消费者取出，不再是直接连接消费者的形式了，而是加了一个中间商，这也是一种很好的解耦方案，并且在高并发的情况下，由于消费者能力有限，消息队列也能起到一个削峰填谷的作用，堆积一部分的请求，再由消费者来慢慢处理，而不会像直接调用那样请求蜂拥而至。
+那么，消息队列具体实现有哪些呢：
+RabbitMQ - 性能很强，吞吐量很高，支持多种协议，集群化，消息的可靠执行特性等优势，很适合企业的开发。 Kafka - 提供了超高的吞吐量，ms级别的延迟，极高的可用性以及可靠性，而且分布式可以任意扩展。 RocketMQ - 阿里巴巴推出的消息队列，经历过双十一的考验，单机吞吐量高，消息的高可靠性，扩展性强，支持事务等，但是功能不够完整，语言支持性较差。 我们这里，主要讲解的是RabbitMQ消息队列。
+RabbitMQ 消息队列 #官方网站： https://www.rabbitmq.com
+RabbitMQ拥有数万计的用户，是最受欢迎的开源消息队列之一，从T-Mobile到Runtastic，RabbitMQ在全球范围内用于小型初创企业和大型企业。
+RabbitMQ轻量级，易于在本地和云端部署，它支持多种消息协议。RabbitMQ可以部署在分布式和联合配置中，以满足大规模、高可用性要求。
+RabbitMQ在许多操作系统和云环境中运行，并为大多数流行语言提供了广泛的开发者工具。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/doc/rabbitmq/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>SpringCloud 1</title>
+      <link>//localhost:1313/doc/cloud/%E4%B8%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/cloud/%E4%B8%80/</guid>
+      <description>微服务基础 #注意： 此阶段学习推荐的电脑配置，至少配备4核心CPU（主频3.0Ghz以上）+16GB内存，否则卡到你怀疑人生。
+前面我们讲解了SpringBoot框架，通过使用SpringBoot框架，我们的项目开发速度可以说是得到了质的提升。同时，我们对于项目的维护和理解，也会更加的轻松。可见，SpringBoot为我们的开发带来了巨大便捷。而这一部分，我们将基于SpringBoot，继续深入到企业实际场景，探讨微服务架构下的SpringCloud。这个部分我们会更加注重于架构设计上的讲解，弱化实现原理方面的研究。
+传统项目转型 #要说近几年最火热的话题，那还得是微服务，那么什么是微服务呢？
+我们可以先从技术的演变开始看起，在我们学习JavaWeb之后，一般的网站开发模式为Servlet+JSP，但是实际上我们在学习了SSM之后，会发现这种模式已经远远落后了，第一，一个公司不可能去招那么多同时会前端+后端的开发人员，就算招到，也并不一定能保证两个方面都比较擅长，相比前后端分开学习的开发人员，显然后者的学习成本更低，专注度更高。因此前后端分离成为了一种新的趋势。通过使用SpringBoot，我们几乎可以很快速地开发一个高性能的单体应用，只需要启动一个服务端，我们整个项目就开始运行了，各项功能融于一体，开发起来也更加轻松。
+但是随着我们项目的不断扩大，单体应用似乎显得有点乏力了。
+随着越来越多的功能不断地加入到一个SpringBoot项目中，随着接口不断增加，整个系统就要在同一时间内响应更多类型的请求，显然，这种扩展方式是不可能无限使用下去的，总有一天，这个SpringBoot项目会庞大到运行缓慢。并且所有的功能如果都集成在单端上，那么所有的请求都会全部汇集到一台服务器上，对此服务器造成巨大压力。
+可以试想一下，如果我们的电脑已经升级到i9-12900K，但是依然在运行项目的时候缓慢，无法同一时间响应成千上万的请求，那么这个问题就已经不是单纯升级机器配置可以解决的了。
+传统单体架构应用随着项目规模的扩大，实际上会暴露越来越多的问题，尤其是一台服务器无法承受庞大的单体应用部署，并且单体应用的维护也会越来越困难，我们得寻找一种新的开发架构来解决这些问题了。
+In short, the microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/doc/cloud/%E4%B8%80/featured.jpeg" />
+    </item>
+    
+    <item>
+      <title>SpringCloud 2</title>
+      <link>//localhost:1313/doc/cloud/%E4%B8%89/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/cloud/%E4%B8%89/</guid>
+      <description>微服务进阶 #前面我们了解了微服务的一套解决方案，但是它是基于Netflix的解决方案，实际上我们发现，很多框架都已经停止维护了，来看看目前我们所认识到的SpringCloud各大组件的维护情况：
+注册中心： Eureka（属于Netflix，2.x版本不再开源，1.x版本仍在更新） 服务调用： Ribbon（属于Netflix，停止更新，已经彻底被移除）、SpringCloud Loadbalancer（属于SpringCloud官方，目前的默认方案） 服务降级： Hystrix（属于Netflix，停止更新，已经彻底被移除） 路由网关： Zuul（属于Netflix，停止更新，已经彻底被移除）、Gateway（属于SpringCloud官方，推荐方案） 配置中心： Config（属于SpringCloud官方） 可见，我们之前使用的整套解决方案中，超过半数的组件都已经处于不可用状态，并且部分组件都是SpringCloud官方出手提供框架进行解决，因此，寻找一套更好的解决方案势在必行，也就引出了我们本章的主角：SpringCloud Alibaba
+阿里巴巴作为业界的互联网大厂，给出了一套全新的解决方案，官方网站（中文）：https://spring-cloud-alibaba-group.github.io/github-pages/2021/zh-cn/index.html
+Spring Cloud Alibaba 致力于提供微服务开发的一站式解决方案。此项目包含开发分布式应用服务的必需组件，方便开发者通过 Spring Cloud 编程模型轻松使用这些组件来开发分布式应用服务。
+依托 Spring Cloud Alibaba，您只需要添加一些注解和少量配置，就可以将 Spring Cloud 应用接入阿里分布式应用解决方案，通过阿里中间件来迅速搭建分布式应用系统。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/doc/cloud/%E4%B8%89/featured.jpeg" />
+    </item>
+    
+    <item>
+      <title>SpringCloud 3</title>
+      <link>//localhost:1313/doc/cloud/%E4%BA%8C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/cloud/%E4%BA%8C/</guid>
+      <description>微服务应用 #前面我们已经完成了SpringCloudAlibaba的学习，我们对一个微服务项目的架构体系已经有了一定的了解，那么本章我们将在应用层面继续探讨微服务。
+分布式权限校验 #虽然完成前面的部分，我们已经可以自己去编写一个比较中规中矩的微服务项目了，但是还有一个问题我们没有解决，登录问题。假如现在要求用户登录之后，才能进行图书的查询、借阅等操作，那么我们又该如何设计这个系统呢？
+回顾我们之前进行权限校验的原理，服务器是如何判定一个请求是来自哪个用户的呢？
+首先浏览器会向服务端发送请求，访问我们的网站。 服务端收到请求后，会创建一个SESSION ID，并暂时存储在服务端，然后会发送给浏览器作为Cookie保存。 之后浏览器会一直携带此Cookie访问服务器，这样在收到请求后，就能根据携带的Cookie中的SESSION ID判断是哪个用户了。 这样服务端和浏览器之间可以轻松地建立会话了。 但是我们想一下，我们现在采用的是分布式的系统，那么在用户服务进行登录之后，其他服务比如图书服务和借阅服务，它们会知道用户登录了吗？
+实际上我们登录到用户服务之后，Session中的用户数据只会在用户服务的应用中保存，而在其他服务中，并没有对应的信息，但是我们现在希望的是，所有的服务都能够同步这些Session信息，这样我们才能实现在用户服务登录之后其他服务都能知道，那么我们该如何实现Session的同步呢？
+我们可以在每台服务器上都复制一份Session，但是这样显然是很浪费时间的，并且用户验证数据占用的内存会成倍的增加。 将Session移出服务器，用统一存储来存放，比如我们可以直接在Redis或是MySQL中存放用户的Session信息，这样所有的服务器在需要获取Session信息时，统一访问Redis或是MySQL即可，这样就能保证所有服务都可以同步Session了（是不是越来越感觉只要有问题，没有什么是加一个中间件解决不了的） 那么，我们就着重来研究一下，然后实现2号方案，这里我们就使用Redis作为Session统一存储，我们把一开始的压缩包重新解压一次，又来从头开始编写吧。
+这里我们就只使用Nacos就行了，和之前一样，我们把Nacos的包导入一下，然后进行一些配置：
+现在我们需要为每个服务都添加验证机制，首先导入依赖：
+&amp;lt;!-- SpringSession Redis支持 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.session&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-session-data-redis&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- 添加Redis的Starter --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/doc/cloud/%E4%BA%8C/featured.jpeg" />
+    </item>
+    
+    <item>
+      <title>博客统计</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/stats/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/stats/</guid>
+      <description>注1：同一文章可能包含多个分类，下同。 注2：山贼 是我的一个朋友。
+社交 #</description>
+      
+    </item>
+    
+    <item>
+      <title>创建型</title>
+      <link>//localhost:1313/doc/design/%E5%88%9B%E5%BB%BA%E5%9E%8B/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%B3%BB%E5%88%97---%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%BA%8C%E5%88%9B%E5%BB%BA%E5%9E%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/design/%E5%88%9B%E5%BB%BA%E5%9E%8B/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%B3%BB%E5%88%97---%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%BA%8C%E5%88%9B%E5%BB%BA%E5%9E%8B/</guid>
+      <description>设计模式（创建型） #软件设计模式（Design pattern），又称设计模式，是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性、程序的重用性。
+肯特·贝克和沃德·坎宁安在1987年利用克里斯托佛·亚历山大在建筑设计领域里的思想开发了设计模式并把此思想应用在Smalltalk中的图形用户接口的生成中。一年后Erich Gamma在他的苏黎世大学博士毕业论文中开始尝试把这种思想改写为适用于软件开发。与此同时James Coplien 在1989年至1991 年也在利用相同的思想致力于C++的开发，而后于1991年发表了他的著作Advanced C++ Idioms。就在这一年Erich Gamma 得到了博士学位，然后去了美国，在那与Richard Helm, Ralph Johnson ,John Vlissides合作出版了Design Patterns - Elements of Reusable Object-Oriented Software 一书，在此书中共收录了23个设计模式。这四位作者在软件开发领域里也以他们的匿名著称Gang of Four(四人帮，简称GoF),并且是他们在此书中的协作导致了软件设计模式的突破。</description>
+      
+    </item>
+    
+    <item>
+      <title>二分法</title>
+      <link>//localhost:1313/algorithm/%E4%BA%8C%E5%88%86%E6%B3%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/algorithm/%E4%BA%8C%E5%88%86%E6%B3%95/</guid>
+      <description>确定区间
+左闭右闭
+left = 0; right = nums.size() - 1; while(left &amp;lt;= right){ // 区间为空 结束循环 ： (l &amp;gt; r) //左右相等是合法区间，比如【1，1】只有 元素1 mid = left + (right-left)&amp;gt;&amp;gt;2; if(nums[mid]&amp;gt;target){ right = mid -1;//为了不包含原来的nums[mid],所以减一 }else if(nums[mid]&amp;lt;target){ left = mid +1; }else return mid; } return -1; class Solution { public int search(int[] nums, int target) { int left = 0; int right = nums.</description>
+      
+    </item>
+    
+    <item>
+      <title>封面测试</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/featured/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/featured/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/featured/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>复杂度</title>
+      <link>//localhost:1313/algorithm/%E7%AE%97%E6%B3%95/c/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/algorithm/%E7%AE%97%E6%B3%95/c/</guid>
+      <description>master公式：
+在编程中，递归是非常常见的一种算法，由于代码简洁而应用广泛，但递归相比顺序执行或循环程序，时间复杂度难以计算，而master公式就是用于计算递归程序的时间复杂度。
+T(N) = a*T(N/b) + O(N^d);
+​ 下面对参数进行解释:
+b：子过程的样本量 a：子过程的计算次数 O(N^d)：子结果合并的时间复杂度 满足如上公式的程序都可以根据master公式计算时间复杂度：
+log(b，a) &amp;gt; d ：时间复杂度为O(N^log(b，a)) log(b，a) = d ：时间复杂度为O(N^d * logN) log(b，a) &amp;lt; d ：时间复杂度为O(N^d)
+在学习归并排序之前，我们先学习一个简单的算法:当我们求一个值的中值时，可以使用：
+int mid = L + ((R - L) &amp;raquo; 1); 注意使用位运算更好，之后采用这种方法来计算平均数</description>
+      
+    </item>
+    
+    <item>
+      <title>哈希篇</title>
+      <link>//localhost:1313/algorithm/%E5%93%88%E5%B8%8C%E7%AF%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/algorithm/%E5%93%88%E5%B8%8C%E7%AF%87/</guid>
+      <description>字母异位词
+class Solution { public: bool isAnagram(string s, string t) { int record[26] = {0}; for (int i = 0; i &amp;lt; s.size(); i++) { // 并不需要记住字符a的ASCII，只要求出一个相对数值就可以了 record[s[i] - &amp;#39;a&amp;#39;]++; } for (int i = 0; i &amp;lt; t.</description>
+      
+    </item>
+    
+    <item>
+      <title>结构型</title>
+      <link>//localhost:1313/doc/design/%E7%BB%93%E6%9E%84%E5%9E%8B/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%B3%BB%E5%88%97---%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%89%E7%BB%93%E6%9E%84%E5%9E%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/design/%E7%BB%93%E6%9E%84%E5%9E%8B/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%B3%BB%E5%88%97---%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%89%E7%BB%93%E6%9E%84%E5%9E%8B/</guid>
+      <description>设计模式（结构型） #结构型设计模式关注如何将现有的类或对象组织在一起形成更加强大的结构。并且根据我们前面学习的合成复用原则，我们该如何尽可能地使用关联关系来代替继承关系是我们本版块需要重点学习的内容。
+类/对象适配器模式 #在生活中，我们经常遇到这样的一个问题：笔记本太轻薄了，以至于没有RJ45网口和USB A口（比如Macbook为了轻薄甚至全是type-c形式的雷电口）但是现在我们因为工作需要，又得使用这些接口来连接线缆，这时我们想到的第一个解决方案，就是去买一个转接口（扩展坞），扩展坞可以将type-c口转换为其他类型的接口供我们使用，实际上这就是一种适配模式。
+由于我们的电脑没有这些接口，但是提供了type-c类型的接口，虽然接口类型不一样，但是同样可以做其他接口能做的事情，比如USB文件传输、有线网络连接等，所以，这个时候，我们只需要添加一个中间人来帮我们转换一下接口形态即可。包括我们常用的充电头，为什么叫电源适配器呢？我们知道传统的供电是220V交流电，但是我们的手机可能只需要5V的电压进行充电，虽然现在有电，但是不能直接充，我们也不可能让电力公司专门为我们提供一个5V的直流电使用。这时电源适配器就开始发挥作用了，比如苹果的祖传5V1A充电头，实际上就是将220V交流电转换为5V的直流电进行传输，这样就相当于在220V交流电和我们的手机之前，做了一个适配器的角色。
+在我们的Java程序中，也会经常遇到这样的问题，比如：
+public class TestSupplier { //手机供应商 public String doSupply(){ return &amp;#34;iPhone 14 Pro&amp;#34;; } } public class Main { public static void main(String[] args) { TestSupplier supplier = new TestSupplier(); test( ?</description>
+      
+    </item>
+    
+    <item>
+      <title>链表的基本操作</title>
+      <link>//localhost:1313/algorithm/%E9%93%BE%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/algorithm/%E9%93%BE%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
+      <description>ADT模型
+&amp;lt;--java--&amp;gt; public class ListNode { // 结点的值 int val; // 下一个结点 ListNode next; // 节点的构造函数(无参) public ListNode() { } // 节点的构造函数(有一个参数) public ListNode(int val) { this.val = val; } // 节点的构造函数(有两个参数) public ListNode(int val, ListNode next) { this.</description>
+      
+    </item>
+    
+    <item>
+      <title>链表篇</title>
+      <link>//localhost:1313/algorithm/%E9%93%BE%E8%A1%A8%E7%AF%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/algorithm/%E9%93%BE%E8%A1%A8%E7%AF%87/</guid>
+      <description>翻转链表
+class Solution { public: //翻转链表 //输入：head = [1,2,3,4,5] //输出：[5,4,3,2,1] //双指针法 ListNode *reverseList(ListNode *head) { ListNode *cur = head; ListNode *pre = NULL; ListNode *tmp = cur;//保存变量 while (cur) { tmp = cur-&amp;gt;next;//保存原来的下一个指向 cur-&amp;gt;next = pre;//将下一个指向改为pre pre = cur;//修改pre往前移动一格 cur = tmp;//修改cur往前移动一格 } return pre; } //递归法 ListNode *reverse(ListNode *cur,ListNode *pre){ if(cur == NULL) return pre; ListNode *tmp= NULL; tmp=cur-&amp;gt;next; cur-&amp;gt;next=pre; return reverse(tmp,cur); } }; 环形链表</description>
+      
+    </item>
+    
+    <item>
+      <title>螺旋矩阵</title>
+      <link>//localhost:1313/algorithm/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/algorithm/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/</guid>
+      <description>处理边界条件？
+循环不可靠！找到循环不变量！
+#include &amp;#34;../cunion.h&amp;#34; class Solution { public: vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; generateMatrix(int n) { int num = 1; //注意这里是全闭区间 vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; matrix(n, vector&amp;lt;int&amp;gt;(n)); int left = 0, right = n - 1, top = 0, bottom = n - 1; while (left &amp;lt;= right &amp;amp;&amp;amp; top &amp;lt;= bottom) { //从左往右 for (int column = left; column &amp;lt;= right; ++column) { matrix[top][column] = num; num++; } for (int row = top + 1; row &amp;lt;= bottom; ++row) { matrix[row][right] = num; num++; } //从右往左 if (left &amp;lt; right &amp;amp;&amp;amp; top &amp;lt; bottom) { for (int column = right - 1; column &amp;gt; left; --column) { matrix[bottom][column] = num; num++; } for (int row = bottom; row &amp;gt; top; --row) { matrix[row][left] = num; num++; } } left++; right--; top++; bottom--; } return matrix; } }; int main() { Solution *solution; vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; vo = solution-&amp;gt;generateMatrix(4); for (int i = 0; i &amp;lt; vo.</description>
+      
+    </item>
+    
+    <item>
+      <title>面向对象设计原则</title>
+      <link>//localhost:1313/doc/design/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%B3%BB%E5%88%97---%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%80%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/design/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%B3%BB%E5%88%97---%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%80%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</guid>
+      <description>面向对象设计原则 #**注意：**推荐完成JavaEE通关路线再开始学习。
+我们在进行软件开发时，不仅仅需要将最基本的业务给完成，还要考虑整个项目的可维护性和可复用性，我们开发的项目不单单需要我们自己来维护，同时也需要其他的开发者一起来进行共同维护，因此我们在编写代码时，应该尽可能的规范。如果我们在编写代码时不注重这些问题，整个团队项目就像一座屎山，随着项目的不断扩大，整体结构只会越来越遭。
+甚至到最后你会发现，我们的程序居然是稳定运行在BUG之上的&amp;hellip;
+所以，为了尽可能避免这种情况的发生，我们就来聊聊面向对象设计原则。
+单一职责原则 #单一职责原则（Simple Responsibility Pinciple，SRP）是最简单的面向对象设计原则，它用于控制类的粒度大小。
+一个对象应该只包含单一的职责，并且该职责被完整地封装在一个类中。
+比如我们现在有一个People类：
+//一个人类 public class People { /** * 人类会编程 */ public void coding(){ System.out.println(&amp;#34;int mian() {&amp;#34;); System.out.println(&amp;#34; printf(\&amp;#34;Holle Wrold!</description>
+      
+    </item>
+    
+    <item>
+      <title>书影音</title>
+      <link>//localhost:1313/media/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/media/</guid>
+      <description>我的 NeoDB 书影音标记记录。 人生就像一场没有剧本的电影。看一场电影，就像做了一场梦，像一次远行，像体验了别人的一生。读书不会变聪明，但读书会让你知道自己蠢。那些师长没有教会我们的道理，从书影音中，我们悄悄地就学会了。</description>
+      
+    </item>
+    
+    <item>
+      <title>行为型</title>
+      <link>//localhost:1313/doc/design/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%B3%BB%E5%88%97---%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%9B%9B%E8%A1%8C%E4%B8%BA%E5%9E%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/doc/design/%E8%A1%8C%E4%B8%BA%E5%9E%8B/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%B3%BB%E5%88%97---%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%9B%9B%E8%A1%8C%E4%B8%BA%E5%9E%8B/</guid>
+      <description>设计模式（行为型） #前面我们已经学习了12种设计模式，分为两类：
+创建型：关注对象创建 结构型：关注类和对象的结构组织 我们接着来看最后一种设计模式，也是最多的一种，行为型设计模式关注系统中对象之间的交互，研究系统在运行时对象之间的相互通信与协作，进一步明确对象的职责。
+解释器模式 #这种模式的使用场景较少，很少使用的一种设计模式，这里提一下就行。
+解释器顾名思义，就是对我们的语言进行解释，根据不同的语义来做不同的事情，比如我们在SE中学习的双栈计算器，正是根据我们输入的算式，去进行解析，并根据不同的运算符来不断进行计算。
+比如我们输入：1+2*3
+那么计算器就会进行解析然后根据语义优先计算2*3的结果然后在计算1+6最后得到7，详细实现请参考JavaSE篇双栈计算器实现。
+模板方法模式 #模板方法模式我们之前也见到过许多，我们先来看看什么是模板方法。
+有些时候，我们的业务可能需要经历很多个步骤来完成，比如我们生病了在医院看病，首先是去门诊挂号，然后等待叫号，然后是去找医生看病，确定病因后，就根据医生的处方去前台开药，最后付钱。这一整套流程看似是规规矩矩的，但是在这其中，某些步骤并不是确定的，比如医生看病这一步，由于不同的病因，可能会进行不同的处理，最后开出来的药方也会不同，所以，整套流程中，有些操作是固定的，有些操作可能需要根据具体情况而定。
+在我们的程序中也是如此，可能某些操作是固定的，我们就可以直接在类中对应方法进行编写，但是可能某些操作需要视情况而定，由不同的子类实现来决定，这时，我们就需要让这些操作由子类来延迟实现了。现在我们就需要用到模板方法模式。
+我们先来写个例子：
+/** * 抽象诊断方法，因为现在只知道挂号和看医生是固定模式，剩下的开处方和拿药都是不确定的 */ public abstract class AbstractDiagnosis { public void test(){ System.</description>
+      
+    </item>
+    
+    <item>
+      <title>移除元素</title>
+      <link>//localhost:1313/algorithm/%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/algorithm/%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/</guid>
+      <description>删除元素
+指的是覆盖而不是的的确确的删除
+C++ vector作为数组的封装
+erase函数：删除：O(n)
+双指针实现
+class Solution { public: int removeElement(vector&amp;lt;int&amp;gt;&amp;amp; nums, int val) { //定义快慢指针 int fast = 0;//获取新元素 int slow = 0;//获取更改位置 for(fast = 0; fast &amp;lt; nums.</description>
+      
+    </item>
+    
+    <item>
+      <title>有序数组的平方</title>
+      <link>//localhost:1313/algorithm/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/algorithm/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</guid>
+      <description>977
+有序数组的平方
+输入：nums = [-4,-1,0,3,10] 输出：[0,1,9,16,100] 解释：平方后，数组变为 [16,1,0,9,100] 排序后，数组变为 [0,1,9,16,100] 最大元素在两边，使用两个指针从两边到中间合拢
+更新方法从大到小
+vector&amp;lt;int&amp;gt;result(nums.size(),0); int k=nums.size()-1;//新数组的下标 int i=0,j=nums.size()-1; //分别从两边往中间取 while(i&amp;lt;=j){ if(nums[i]*nums[i]&amp;lt;nums[j]*nums[j]){ result[k--]=nums[j]*nums[j]; j--; } //num[i]*nums[i] &amp;gt;= nums[j]*nums[j] else { result[k--]=nums[i]*nums[i]; i++; } } return result; class Solution { public int[] sortedSquares(int[] nums) { int []res = new int [nums.</description>
+      
+    </item>
+    
+    <item>
+      <title>长度最小的数组</title>
+      <link>//localhost:1313/algorithm/%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/algorithm/%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0%E7%BB%84/</guid>
+      <description>209
+给定一个含有 n 个正整数的数组和一个正整数 target 。
+找出该数组中满足其总和大于等于 target 的长度最小的 连续 子数组 [numsl, numsl+1, &amp;hellip;, numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
+输入：target = 7, nums = [2,3,1,2,4,3] 输出：2 解释：子数组 [4,3] 是该条件下的长度最小的子数组。 #include &amp;lt;iostream&amp;gt; #include &amp;lt;cstdio&amp;gt; #include &amp;lt;iostream&amp;gt; #include &amp;lt;vector&amp;gt; using namespace std; class Solution { public: int minSubArrayLen(int target, vector&amp;lt;int&amp;gt;&amp;amp; nums) { int right = nums.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Entire-Notes on 春江花朝秋月夜</title>
+    <link>//localhost:1313/entire-note/</link>
+    <description>Recent content in Entire-Notes on 春江花朝秋月夜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>© 2024 春江花朝秋月夜</copyright>
+    <lastBuildDate>Tue, 19 Mar 2024 17:31:54 +0800</lastBuildDate><atom:link href="//localhost:1313/entire-note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>代码随想录算法合辑</title>
+      <link>//localhost:1313/entire-note/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95-%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 19 Mar 2024 17:31:54 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95-%E7%AE%97%E6%B3%95/</guid>
+      <description>算法合辑✈️✈️去到算法目录✈️✈️2024年3月19日· 12:01</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95-%E7%AE%97%E6%B3%95/featured.png" />
+    </item>
+    
+    <item>
+      <title>抽象数据类型ADT</title>
+      <link>//localhost:1313/entire-note/%E9%93%BE%E8%A1%A8%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%91/</link>
+      <pubDate>Mon, 18 Mar 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E9%93%BE%E8%A1%A8%E9%98%9F%E5%88%97%E5%92%8C%E6%A0%91/</guid>
+      <description>链表 ，队列和二叉树 #尝试使用cpp实现二叉树，下面是粗劣的代码： #指针和引用传递的区别：
+//如果传递引用： void List_Init(List &amp;amp;list) { // 防止访问空指针 if (list.next != NULL) { list.next = NULL; list.node_count = 0; } } //如果传递指针： void List_Init(List *list) { // 防止访问空指针 if (list-&amp;gt;next !</description>
+      
+    </item>
+    
+    <item>
+      <title>Mysql-Redis</title>
+      <link>//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/sql-redis-db/</link>
+      <pubDate>Fri, 15 Mar 2024 17:06:00 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/sql-redis-db/</guid>
+      <description>Redis详解 #1. Redis简介 #使用C语言开发的内存数据库，读写速度快，广泛用于缓存方向 可以用于分布式锁，甚至是消息队列 提供多种数据类型来支持不同的业务场景 支持事务、持久化、Lua脚本、多种集群方案 2. Redis 和 Memcached 对比 #2.1 相同点 #都基于内存，一般都是用来当缓存使用 都有过期策略 两者性能都非常高 2.2 区别 #Redis 支持更丰富的数据类型【key-value类型、提供l ist set zset hash等数据结构的存储】、更复杂的应用场景。Memcached只支持简单的 key-value 类型； Redis支持数据的持久化，有灾难恢复机制，Memcached不支持； Redis在服务器内存不足时，可以将不用的数据放到磁盘上；Memcached则直接报异常； Redis原生支持集群模式，Memcached原生不支持，需要依靠客户端实现往集群分片写入数据； Memcached是多线程的非阻塞IO复用的网络模型，Redis使用单线程的多路IO复用模型【6.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/sql-redis-db/featured.png" />
+    </item>
+    
+    <item>
+      <title>计算机科学基础</title>
+      <link>//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95/</link>
+      <pubDate>Sat, 09 Mar 2024 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95/</guid>
+      <description>基础知识 #Hash是什么，有哪些常见的hash定址法 #散列表算法希望能尽量做到不经过任何比较，通过一次存取就能得到所查找的数据元素 ，因而必 须要在数据元素的存储位置和它的关键字（可用 key 表示）之间建立一个确定的对应关系，使每个 关键字和散列表中一个唯一的存储位置相对应。因此在查找时，只要根据这个对应关系找到给定 关键字在散列表中的位置即可。这种对应关系被称为散列函数(可用 h(key)表示)。
+1）直接定址法： 取关键字或关键字的某个线性函数值为散列地址。 即：h(key) = key 或 h(key) = a * key + b，其中 a 和 b 为常数。 （2）数字分析法 （3）平方取值法： 取关键字平方后的中间几位为散列地址。 （4）折叠法：将关键字分割成位数相同的几部分，然后取这几部分的叠加和作为散列地址。 （5）除留余数法：取关键字被某个不大于散列表表长 m 的数 p 除后所得的余数为散列地址， 即：h(key) = key MOD p p ≤ m （6）随机数法：选择一个随机函数，取关键字的随机函数值为它的散列地址， 即：h(key) = random(key) 什么是排序二叉树 #首先如果普通二叉树每个节点满足：左子树所有节点值小于它的根节点值，且右子树所有节点值 大于它的根节点值，则这样的二叉树就是排序二叉树</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95/featured.png" />
+    </item>
+    
+    <item>
+      <title>使用主从模式搭建一个Socket网络通信模型</title>
+      <link>//localhost:1313/entire-note/netty/</link>
+      <pubDate>Wed, 06 Mar 2024 21:21:06 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/netty/</guid>
+      <description>通过NIO非阻塞式模型我们可以搭建一个Reactor-SubReactor-Handler的消息服务器 #netty的三大基本组件是：buffer，channel，selector
+目的：
+主要目的是利用Selector选择器实现IO多路复用
+先来编写一下客户端，简单起见，只需要建立一个SocketChannel获取管道流传输数据
+/** * @author 春江花朝秋月夜 */ public class ClientReactor { public static void main(String[] args) { // 创建一个新的SocketChannel，一会通过通道进行通信 try (SocketChannel channel =SocketChannel.open(newInetSocketAddress(&amp;#34;localhost&amp;#34;, 9000)); Scanner scanner = new Scanner(System.</description>
+      
+    </item>
+    
+    <item>
+      <title>微服务基础知识</title>
+      <link>//localhost:1313/entire-note/spring/</link>
+      <pubDate>Tue, 05 Mar 2024 15:08:23 +0000</pubDate>
+      
+      <guid>//localhost:1313/entire-note/spring/</guid>
+      <description>基于SpringCloudAlibaba+Nacos+Feign+Seata+Sentinel作为微服务路线叙述 #前言：本次SpringCloud微服务学习涉及NetFlix和Alibaba两不同版本，主要对应关系为：
+微服务原则：所有的服务都需要保证职责的单一原则
+SpringCloud作为一系列框架的有序集合，是SOA的延续
+SpringCloud Alibaba 是遵循SpringCloud来开发的套件，Nacos亦然
+服务注册和发现 #Eureka #Eureka能够自动注册并发现微服务，然后对服务的状态、信息进行集中管理，这样当我们需要获取其他服务的信息时，我们只需要向Eureka进行查询就可以了。
+通过Eureka服务器进行服务注册与发现，那么现在我们来看看，它的负载均衡到底是如何实现的，实际上之前演示的负载均衡是依靠LoadBalancer实现的。
+在2020年前的SpringCloud版本是采用Ribbon作为负载均衡实现，但是2020年的版本之后SpringCloud把Ribbon移除了，进而用自己编写的LoadBalancer替代。
+如何找到服务？
+Nacos #Nacos注册中心 #功能：
+服务注册发现 配置中心 服务元数据/实例元数据：可以用于流量控制（在实例的metadata（元数据）中加上标签信息。通过IRule获取Server列表并根据这些Server中元数据的标签信息决定路由情况） 局域网内服务信息传输快 服务集群分级模式
+服务-集群-实例
+修改yml：
+spring: cloud: nacos: server-addr: localhost:8848 discovery: cluster-name: ClUSTER-01 对指定服务进行配置</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/spring/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Music</title>
+      <link>//localhost:1313/entire-note/music_build/</link>
+      <pubDate>Wed, 07 Feb 2024 19:22:59 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/music_build/</guid>
+      <description>搭建本站音乐 #搭建过程绕了一些弯子，吃了前端的亏，主要借鉴了金圣皓，得知了目前主流的博客音乐依托于APlayer&amp;amp;Meting JS,前者是嵌入HTML的音乐组件库，后者是可用通过网易，QQ音乐等网站的音乐插件，本网站作为静态页面，故只需通过CDN引入即可
+网站搭建主题为Blowfish，在blog/layouts/shortcodes文件夹下添加album.html文件
+这里采用的是网易音乐的歌单，获取歌单id自行从&lt;?xml version=&#34;1.0&#34; standalone=&#34;no&#34;?&gt;&lt;!DOCTYPE svg PUBLIC &#34;-//W3C//DTD SVG 1.1//EN&#34; &#34;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&#34;&gt;网易云音乐歌单中获取
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/color-thief@2.2.5/js/color-thief.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;span style=&amp;#34;color:#111827&amp;#34;&amp;gt; &amp;lt;!--{{.Get 0}}作为歌单参数由引用组件处添加--&amp;gt; &amp;lt;meting-js server=&amp;#34;netease&amp;#34; type=&amp;#34;playlist&amp;#34; id=&amp;#34;{{.</description>
+      
+    </item>
+    
+    <item>
+      <title>RabbitMq</title>
+      <link>//localhost:1313/entire-note/mq/</link>
+      <pubDate>Tue, 07 Nov 2023 20:52:20 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/mq/</guid>
+      <description>认识RabbitMQ #环境：ubangtu #访问协议： amqp
+了解安装（反正也记不住）：
+sudo apt install erlang sudo apt install rabbitmq-server sudo rabbitmqctl status sudo rabbitmq-plugins enable rabbitmq_management sudo rabbitmqctl add_user 用户名 密码 sudo rabbitmqctl set_user_tags admin administrator 设计架构图：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/mq/featured.png" />
+    </item>
+    
+    <item>
+      <title>Vue3 响应式Api开发笔记</title>
+      <link>//localhost:1313/entire-note/vue/</link>
+      <pubDate>Sat, 04 Nov 2023 11:31:54 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/vue/</guid>
+      <description>Vue3 响应式Api开发笔记 #目录结构： #用vite构建的Vue3目录结构：
+src:
+这里是我们要开发的目录，基本上要做的事情都在这个目录里。里面包含了几个目录及文件：
+assets: 放置一些图片，如logo等。 components: 目录里面放了一个组件文件，可以不用。 App.vue: 项目入口文件，我们也可以直接将组件写这里，而不使用 components 目录。 main.js: 项目的核心文件。 index.css: 样式文件。 static	静态资源目录，如图片、字体等。
+public	公共资源目录。
+package.json	项目配置文件。
+vue3创建应用 #实际案例 #语法： const app = Vue.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/vue/featured.png" />
+    </item>
+    
+    <item>
+      <title>面试题</title>
+      <link>//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%9F%90%E4%B8%AA%E7%BE%A4%E9%87%8C%E7%9A%84/</link>
+      <pubDate>Wed, 25 Oct 2023 18:23:23 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%9F%90%E4%B8%AA%E7%BE%A4%E9%87%8C%E7%9A%84/</guid>
+      <description>题目 #难点：合并
+解决方法：
+实体类：
+package com.atguigu; import lombok.AllArgsConstructor; import lombok.Data; /** * com.atguigu.ItemDO * * @author 春江花朝秋月夜 * @since 2023/10/25 14:45 */ @Data @AllArgsConstructor public class ItemDO { int id;//10011 int type;//具体不确定 double score;//[0，1000] @Override public String toString() { return &amp;#34;ItemDO{&amp;#34; + &amp;#34;id=&amp;#34; + id + &amp;#34;, type=&amp;#34; + type + &amp;#34;, score=&amp;#34; + score + &amp;#39;\n&amp;#39;+ &amp;#39;}&amp;#39;; } } 方法：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%9F%90%E4%B8%AA%E7%BE%A4%E9%87%8C%E7%9A%84/featured.png" />
+    </item>
+    
+    <item>
+      <title>类加载</title>
+      <link>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E7%B1%BB%E5%8A%A0%E8%BD%BD/</link>
+      <pubDate>Tue, 24 Oct 2023 13:58:54 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E7%B1%BB%E5%8A%A0%E8%BD%BD/</guid>
+      <description>CAFE BABE -&amp;gt;表示这是一个.class文件
+类加载机制 #类加载的条件：
+使用new关键字创建对象时 使用某个类的静态成员（包括方法和字段）的时候（当然，final类型的静态字段有可能在编译的时候被放到了当前类的常量池中，这种情况下是不会触发自动加载的） 使用反射对类信息进行获取的时候（之前的数据库驱动就是这样的） 加载一个类的子类时 加载接口的实现类，且接口带有default的方法默认实现时 字节码指令 #先返回结果再进行自增或者先自增再给出结果
+Asm字节码框架 #劝退，还是算了。。。
+Spring实现的CGLib就是基于这个实现的。
+类加载机制 #</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E7%B1%BB%E5%8A%A0%E8%BD%BD/featured.png" />
+    </item>
+    
+    <item>
+      <title>元空间和引用方式</title>
+      <link>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%85%83%E7%A9%BA%E9%97%B4/%E5%85%83%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Tue, 24 Oct 2023 13:28:04 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%85%83%E7%A9%BA%E9%97%B4/%E5%85%83%E7%A9%BA%E9%97%B4/</guid>
+      <description>引用类型 #强引用：new Object(); #JVM不会随意回收强引用对象
+相反，将会尝试回收软引用
+软引用： #SoftReference&amp;lt;Object&amp;gt; soft=new SoftReference(); 设置内存大小：-Xms -Xmx
+ReferenceQueue&amp;lt;Object&amp;gt; queue = new ReferenceQueue&amp;lt;&amp;gt;(); SoftReference&amp;lt;Object&amp;gt; reference = new SoftReference&amp;lt;&amp;gt;(new Object(), queue); System.out.println(reference); try{ List&amp;lt;String&amp;gt; list = new ArrayList&amp;lt;&amp;gt;(); while (true) list.</description>
+      
+    </item>
+    
+    <item>
+      <title>Jvm</title>
+      <link>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/jvm/</link>
+      <pubDate>Thu, 12 Oct 2023 23:51:04 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/jvm/</guid>
+      <description>概述 #JVM 是模拟物理机实现的将 javac 编译为.class 文件，jvm 支持平台无关性。 class 文件通过类加载器-》解释器-》硬件沟通
+Jvm 基于 HotSpot 虚拟机架构同时也是基于栈实现的。与 C 语言不同，不同架构的操作系统编译输出的文件不同，jvm 编译后产生的 文件完全相同。
+由于执行一段程序需要不断地编译和反编译，将热点执行的代买柜内为热点代码再转换为机器码提高执行效率。同时 jdk1.2 之后支持使用 JNI 来 调用 C/C++代码提升代码执行效率
+指令 #基本数据结构：堆栈+队列
+常见的编译命令：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/jvm/featured.png" />
+    </item>
+    
+    <item>
+      <title>垃圾回收机制</title>
+      <link>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/</link>
+      <pubDate>Thu, 12 Oct 2023 23:51:04 +0800</pubDate>
+      
+      <guid>//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/</guid>
+      <description>垃圾回收机制 #引用计数法 #创建引用变量
+循环引用,当对象成为null就没办法了
+可达性分析算法：
+最终判定过程，此过程可以最后挽留对象
+重写finalize方法，最后可以救赎被gc的对象
+比如下面这个情况
+注意：
+同时，这个方法只能生效一次，躲得过初一躲不过十五
+分代收集机制: #方法区使用永久代实现
+垃圾收集也分为： Minor GC - 次要垃圾回收，主要进行新生代区域的垃圾收集。
+触发条件：新生代的Eden区容量已满时。
+Major GC - 主要垃圾回收，主要进行老年代的垃圾收集。
+Full GC - 完全垃圾回收，对整个Java堆内存和方法区进行垃圾回收。</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/entire-note/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

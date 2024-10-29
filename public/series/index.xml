@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on 春江花朝秋月夜</title>
+    <link>//localhost:1313/series/</link>
+    <description>Recent content in Series on 春江花朝秋月夜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>© 2024 春江花朝秋月夜</copyright>
+    <atom:link href="//localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud</title>
+      <link>//localhost:1313/series/cloud/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/series/cloud/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mq</title>
+      <link>//localhost:1313/series/mq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/series/mq/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>NIO&amp;Netty</title>
+      <link>//localhost:1313/series/nionetty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/series/nionetty/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sql</title>
+      <link>//localhost:1313/series/sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/series/sql/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>设计模式</title>
+      <link>//localhost:1313/series/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/series/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

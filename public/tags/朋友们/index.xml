@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>朋友们 on 春江花朝秋月夜</title>
+    <link>//localhost:1313/tags/%E6%9C%8B%E5%8F%8B%E4%BB%AC/</link>
+    <description>Recent content in 朋友们 on 春江花朝秋月夜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>© 2024 春江花朝秋月夜</copyright>
+    <lastBuildDate>Fri, 27 Oct 2023 20:52:20 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/%E6%9C%8B%E5%8F%8B%E4%BB%AC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>friend</title>
+      <link>//localhost:1313/friend/</link>
+      <pubDate>Fri, 27 Oct 2023 20:52:20 +0800</pubDate>
+      
+      <guid>//localhost:1313/friend/</guid>
+      <description>网上的朋友们 #下一曲当你的站点失效时，本站会定期更新删除。与你分享我的眼睛Per aspera ad astra · 寻此苦旅 终达星辰金圣皓我喜欢听花开的声音，更想自由地深情地呼吸z3475泛 ACGN 爱好者，喜欢业余写点小作品改善生活AncientElement春江潮水连海平，海上明月共潮生Pinpe的云端一个属于自己的云朵。小棉尾巴关心前端技术、个人成长、女性主义和内容创作宁子博客人生得意须尽欢丨浅笑安然丨生活不止眼前的苟且，还有诗和远方草方块还没有名字的折腾人本站博客仓库地址：</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/friend/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

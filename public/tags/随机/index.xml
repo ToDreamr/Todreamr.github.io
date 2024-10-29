@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>随机 on 春江花朝秋月夜</title>
+    <link>//localhost:1313/tags/%E9%9A%8F%E6%9C%BA/</link>
+    <description>Recent content in 随机 on 春江花朝秋月夜</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>© 2024 春江花朝秋月夜</copyright>
+    <lastBuildDate>Sat, 11 Nov 2023 23:55:26 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/%E9%9A%8F%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>写点脚本</title>
+      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E6%8E%A8%E9%80%81%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 11 Nov 2023 23:55:26 +0800</pubDate>
+      
+      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E6%8E%A8%E9%80%81%E7%AC%94%E8%AE%B0/</guid>
+      <description>懒得点点了，写个脚本维护笔记
+目前来看效果还行</description>
+      
+    </item>
+    
+  </channel>
+</rss>
