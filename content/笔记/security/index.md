@@ -9,8 +9,6 @@ tags= ['spring']
 
 项目地址：
 
-{{< github repo="ToDreamr/backend-base" >}}
-
 #### 基本实现的功能
 
 - Security通过数据库实现自定义登录

@@ -1,24 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>操作系统s on 春江花朝秋月夜</title>
-    <link>//localhost:1313/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
-    <description>Recent content in 操作系统s on 春江花朝秋月夜</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <copyright>© 2024 春江花朝秋月夜</copyright>
-    <atom:link href="//localhost:1313/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title></title>
-      <link>//localhost:1313/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/ubuntu%E7%B3%BB%E7%BB%9F%E5%90%84%E8%BD%AF%E4%BB%B6/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/ubuntu%E7%B3%BB%E7%BB%9F%E5%90%84%E8%BD%AF%E4%BB%B6/</guid>
-      <description>Ubuntu操作系统 #Nginx安装 #删除nginx，–purge包括配置文件 #sudo apt-get --purge remove nginx 删除Nginx的相关核心包和
-sudo apt-get --purge remove nginxsudo apt-get --purge remove nginx-commonsudo apt-get --purge remove nginx-core 查看是否还有Nginx
-dpkg --get-selections|grep nginxwhich nginx # 不在显示nginx 安装Nginx</description>
-      
-    </item>
-    
-  </channel>
-</rss>

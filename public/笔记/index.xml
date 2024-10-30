@@ -1,352 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>笔记s on 春江花朝秋月夜</title>
-    <link>//localhost:1313/%E7%AC%94%E8%AE%B0/</link>
-    <description>Recent content in 笔记s on 春江花朝秋月夜</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <copyright>© 2024 春江花朝秋月夜</copyright>
-    <lastBuildDate>Tue, 15 Oct 2024 18:23:23 +0800</lastBuildDate><atom:link href="//localhost:1313/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>MySQL一些常识和函数</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/mysql/</link>
-      <pubDate>Tue, 15 Oct 2024 18:23:23 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/mysql/</guid>
-      <description>MVCC机制 #当一个事务要对数据库中的数据进行修改时，MVCC 会为该事务创建一个数据快照，而不是直接修改实际的数据行。
-一致性非锁定读（读取数据的时候为了保证数据的一致性，没有锁定，通过版本号）
-如果读取的行正在执行 DELETE 或 UPDATE 操作，这时读取操作不会去等待行上锁的释放。相反地，InnoDB 存储引擎会去读取行的一个快照数据，对于这种读取历史数据的方式，我们叫它快照读 &amp;gt;(snapshot read)
-锁定读如果执行的是下列语句，就是 锁定读（Locking Reads） select &amp;hellip; lock in share mode
-select &amp;hellip; for updateinsert、update、
-delete
-操作在锁定读下，读取的是数据的最新版本，这种读也被称为 当前读（current read）。锁定读会对读取到的记录加锁：select &amp;hellip; lock in share mode：对记录加 S 锁，其它事务也可以加S锁，如果加 x 锁则会被阻塞select &amp;hellip; for update、insert、update、delete：对记录加 X 锁，且其它事务不能加任何锁在一致性非锁定读下，即使读取的记录已被其它事务加上 X 锁，这时记录也是可以被读取的，即读取的快照数据。上面说了，在 Repeatable Read 下 MVCC 防止了部分幻读，这边的 “部分” 是指在 一致性非锁定读 情况下，只能读取到第一次查询之前所插入的数据（根据 Read View 判断数据可见性，Read View 在第一次查询时生成）。但是！如果是 当前读 ，每次读取的都是最新数据，这时如果两次查询中间有其它事务插入数据，就会产生幻读。所以， InnoDB 在实现Repeatable Read 时，如果执行的是当前读，则会对读取的记录使用 Next-key Lock ，来防止其它事务在间隙间插入数据</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/mysql/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Oracle数据库</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/oracle/</link>
-      <pubDate>Tue, 15 Oct 2024 18:23:23 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/oracle/</guid>
-      <description>建表语句：
-create table DEPARTMENTS ( deptno number, name varchar2(50) not null, location varchar2(50), constraint pk_departments primary key (deptno) ); Tables can declarative specify relationships between tables, typically referred to as referential integrity.</description>
-      
-    </item>
-    
-    <item>
-      <title>程序设计中使用到的一些图</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E7%94%BB%E5%9B%BE/</link>
-      <pubDate>Tue, 15 Oct 2024 18:23:23 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E7%94%BB%E5%9B%BE/</guid>
-      <description>UML类图 #UML——Unified modeling language UML(统一建模语言)，是一种用于软件系统分析和设计的语言工具，它用于帮助软件开发人员进行思考和记录思路的结果
-UML本身是一套符号的规定，就像数学符号和化学符号一样，这些符号用于描述软件模型中的各个元素和他们之间的关系，比如类、接口、实现、泛化、依赖、组合、聚合等 设计类的原则： #设计一个类中的信息和行为要 高内聚 设计多个类, 类之间要 低耦合 对于 继承(泛化)、实现(实现)这两种关系比较简单，它们体现的是一种类与类、或者类与接口之间的 纵向关系。 其他的四种关系则体现的是类与类、或者类与接口之间的 引用/横向关系。这四种关系所表现的强弱程度来看，从强到弱依次为：组合&amp;gt;聚合&amp;gt;关联&amp;gt;依赖。</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/%E7%94%BB%E5%9B%BE/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>面试经历</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E9%99%85%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E5%88%B0%E7%9A%84/</link>
-      <pubDate>Tue, 15 Oct 2024 18:23:23 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E9%99%85%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E5%88%B0%E7%9A%84/</guid>
-      <description>数字马力 #说出自己实习经历中负责的最出彩的项目并介绍情况
-八股文：
-List使用for循环遍历增加或删除元素是否可行?
-不可以，回抛出(ConcurrentModificationException)
-原因：remove和add操作会导致modCount和迭代器中的expectedModCount不一致。
-解释：涉及到fail-fast机制，也就是一旦检测到可能发生错误，就立马抛出异常，程序不继续往下执行，在Java中对集合的操作经常涉及到fail-fast机制， 当多个线程对同一个集合的内容进行操作时，就可能会产生fail-fast事件
-解决办法：普通for循环、使用Iterator进行元素删除、使用Stream的filter、使用fail-safe的类等。
-数组转成集合：
-//1: List list = new ArrayList&amp;lt;&amp;gt;(Arrays.asList(&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;, &amp;#34;c&amp;#34;)) //2: Integer [] myArray = { 1, 2, 3 }; List myList = Arrays.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%AE%9E%E9%99%85%E9%9D%A2%E8%AF%95%E8%A2%AB%E9%97%AE%E5%88%B0%E7%9A%84/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Help</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/help/</link>
-      <pubDate>Tue, 30 Apr 2024 16:17:35 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/help/</guid>
-      <description>如何使用Hugo+Blowfish? #新建文章 #使用命令新建文章，新建文章生成在content目录下 将会使用archrtypes/default.md格式添加新文件头部配置键。
-PS D:\JavaWork\qvisl9.github.io&amp;gt; hugo new help/index.md Content &amp;#34;D:\\JavaWork\\qvisl9.github.io\\content\\help\\index.md&amp;#34; created PS D:\JavaWork\qvisl9.github.io&amp;gt; 分类 #blowfish的分类相对来说不是很完善效果如下：
-实现方式很简单，需在头部配置键中添加tags项
-就像这样子：
-主题将会识别配置键并自动检索所有带有此项的文章生成分类页面
-系列 #blowfish的是带有系列配置项的，效果如下：
-类似上述的操作，需要添加头部配置项：
-注意！！！请将文件命名为index.md，否则博客主题将无法自动为文章进行分类和添加相应的功能
-图标 #添加自己的图标和文章图片，放在assets目录下，icon作为 图标文件夹，添加相应图标后可显示对应的图片，如下：</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/help/featured.png" />
-    </item>
-    
-    <item>
-      <title>Mac体验版</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/mac%E4%BD%93%E9%AA%8C%E7%89%88bushi/</link>
-      <pubDate>Thu, 14 Mar 2024 18:23:23 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/mac%E4%BD%93%E9%AA%8C%E7%89%88bushi/</guid>
-      <description>经过我的不懈努力，RedmiBook终于变成了Mac Book⬇️⬇️
-参考笔记 参考视频 #目前看起来还行：
-不得不说这个文件夹样式效果真好：
-偶尔出现卡顿，之后记录</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/mac%E4%BD%93%E9%AA%8C%E7%89%88bushi/featured.png" />
-    </item>
-    
-    <item>
-      <title>爬虫浅记</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/</link>
-      <pubDate>Wed, 13 Mar 2024 18:23:23 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E7%88%AC%E8%99%AB/</guid>
-      <description>目的：使用爬虫爬取都应指定视频下方的所有评论 #接电商小公司的面试需求
-参考视频
-知道了爬虫的基本原理是模仿正常用户的操作获取相关信息，下面是实际操作的记录
-过程：
-先是去抖音网站获取评论的api接口，拉取下来后使用ApiPost测试发现返回&amp;quot;block&amp;quot;阻塞信息 而后添加了相关请求头，发现加入User-Agent是关键信息 然而每次获取不同的视频发现有更改的参数：XBogus，这个参数是网站后台通过函数循环调用自己生成的（反爬） 遂通过浏览器断点调试最终追踪堆栈到生成函数： function _0x5a8f25(_0x48914f, _0xa771aa) { return (&amp;#39;undefined&amp;#39; == typeof window ? global : window)[&amp;#39;_$webrt_1668687510&amp;#39;](args) } 于是通过Node调试js文件，模拟循环过程生成参数 window = global; document = { refferer:&amp;#39;https://www.</description>
-      
-    </item>
-    
-    <item>
-      <title>Waline评论系统</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E6%80%8E%E4%B9%88%E8%AF%84%E8%AE%BA/</link>
-      <pubDate>Mon, 11 Mar 2024 18:23:23 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E6%80%8E%E4%B9%88%E8%AF%84%E8%AE%BA/</guid>
-      <description>Waline博客网站评论 #注册账号 #注册账号✈️
-创建应用✈️
-创建仓库-》用于存放评论
-创建好之后，去到settings里面修改Environment三个参数
-LEAN_ID：AppId LEAN_KEY：App_key LEAN_MASTER_KEY：Master_KEY
-添加好之后，刷新工作流
-通过HTML部署
-导入样式文件和js脚本文件
-通过Waline的配置键添加自定义的东西
-注：借鉴自金圣浩
-&amp;lt;br/&amp;gt; &amp;lt;span style=&amp;#34;color:rgba(var(--color-neutral-400),var(--tw-text-opacity));&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;post-meta-item-text&amp;#34; &amp;gt;&amp;amp;nbsp;&amp;amp;nbsp;{{i18n &amp;#34;article.page_views&amp;#34;}}: &amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;waline-pageview-count&amp;#34;&amp;gt;⏳&amp;lt;/span&amp;gt;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;br/&amp;gt; &amp;lt;/span&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; document.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/%E6%80%8E%E4%B9%88%E8%AF%84%E8%AE%BA/featured.png" />
-    </item>
-    
-    <item>
-      <title>微信登录</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/wexin-oauth/</link>
-      <pubDate>Sat, 02 Mar 2024 13:22:59 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/wexin-oauth/</guid>
-      <description>微信登录 #参考文章：
-Vue生成二维码
-构建微信登录服务器 验证后端
-微信开发公众平台
-效果展示： #通过前端生成的二维码：
-前端部分（使用Dom来创建script节点）： #createWxLoginQrCode(){ const script=document.createElement(&amp;#39;script&amp;#39;); script.type=&amp;#39;text/javascript&amp;#39;; script.src=&amp;#39;https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js&amp;#39;; const wxElement = document.body.appendChild(script) wxElement.onload = function () { var obj = new WxLogin({ id: &amp;#39;wxLoginCode&amp;#39;, // 需要显示的容器id appid: &amp;#39;&amp;#39;,// 公众号appid wx******* scope: &amp;#39;snsapi_login&amp;#39;, // 网页默认即可 redirect_uri: encodeURIComponent(&amp;#39; &amp;#39;), // 授权成功后回调的url state: Math.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/wexin-oauth/featured.png" />
-    </item>
-    
-    <item>
-      <title>自用的Vscode个人觉得还算耐看的主题和字体以及编码习惯</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/vscode/</link>
-      <pubDate>Sat, 02 Mar 2024 13:22:59 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/vscode/</guid>
-      <description>Java 选手为什么用 Vscode 了？
-答：苦于 IDEA 的启动速度，本人的电脑带不动了很多了，就算改了索引和 Maven，经常还是要编辑 js，vue，html 文件，小全栈辣鸡吧，故而转战 Vscode。并不完全弃坑 IDEA
-目前调教 Vscode 还算挺好哒哈哈，好用呀！！！
-这里我选择了本地的 Maven 和用于日语的字体()，主题选用的是：Default Dark Modern，目前看起来还行，经典就是好，配合我的背景图片很搭!
-当选择编写 Spring 应用程序时可选用 Idea 主题，较为接近 Jetbrains 家族的 Idea,字体选用的是 JetBrains 家族的 JetBrains Mono，normal 版；</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/vscode/featured.png" />
-    </item>
-    
-    <item>
-      <title>Spring-Security</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/security/</link>
-      <pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/security/</guid>
-      <description>基于Spring6+JDK18的SpringSecurity环境的项目DEMO #项目地址：
-ToDreamr/security-community基于 Spring6+Vue+Jwt+JDK18环境的SpringSecurity社区项目Java 10基本实现的功能 #Security通过数据库实现自定义登录 通过自己添加的过滤器链完成JWT+Token的请求权限认证 Token加入Redis做无状态无Session处理 邮箱验证码收发功能 注意事项 #sql执行脚本在项目doc文件目录下，Security在Spring6下已经废除
-通过WebSecurityAdaptor来实现HttpSecurity这个Bean的配置注入。
-目前只支持Lamda表达式。
-请在application.yml中自行配置自己的邮箱SMTP服务
-配置案例：
-@Bean public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { return http .</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/security/featured.png" />
-    </item>
-    
-    <item>
-      <title>本站Music搭建相关</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/music/</link>
-      <pubDate>Wed, 07 Feb 2024 19:22:59 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/music/</guid>
-      <description>搭建本站音乐 #搭建过程绕了一些弯子，吃了前端的亏，主要借鉴了金圣皓，得知了目前主流的博客音乐依托于APlayer&amp;amp;Meting JS,前者是嵌入HTML的音乐组件库，后者是可用通过网易，QQ音乐等网站的音乐插件，本网站作为静态页面，故只需通过CDN引入即可
-Meting Js参数,官方文档
-&amp;lt;!--MetingJS参数详情--&amp;gt; &amp;lt;!-- id=&amp;#39;外链播放器id&amp;#39;,必须参数 type=[song=单曲, playlist=歌单, album=专辑, search=搜索结果, artist=艺术家],必须参数 server=[netease=网易云音乐, tencent=QQ音乐, kugou=酷狗音乐, xiami=虾米音乐, baidu=百度音乐],必须参数 fixed=启用固定模式，固定在左下角,默认false mini=启用迷你模式,默认false preload=[none,metadata,auto] mutex=[互斥锁，默认true],默认false order=[random=随机播放,list=列表播放] loop=[all=全部循环, one=循环一次 ,none=不循环] volume=[音量，默认0.</description>
-      
-    </item>
-    
-    <item>
-      <title>NetFlix和SpringCloudAlibaba</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%BC%94%E8%BF%9B/</link>
-      <pubDate>Fri, 26 Jan 2024 13:56:23 +0000</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%BC%94%E8%BF%9B/</guid>
-      <description>Spring Cloud Netflix 介绍Netflix套件中有Eureka、Ribbon、Hystrix、Zuul、Feign五个非常知名的开源项目，分别被用于服务治理、负载均衡、服务容错、服务网关、服务通信。
-2018年，Netflix套件中的开源项目陆续进入了维护模式。
-2020年12月22日，Spring Cloud 2020.0.0版本发布，该版本中移除了Netflix套件中的相关依赖。
-Spring Cloud Alibaba 介绍2018年7月，Spring Cloud Alibaba正式开源，进入Spring Cloud孵化器。2018年10月，Spring Cloud Alibaba发布开源后的第一个版本。
-Spring Cloud Alibaba提供的组件如下：
-Sentinel：阿里巴巴开源产品，不仅仅可以作为断路器，也支持流量控制和服务降级。Nacos：阿里巴巴开源产品，服务注册与服务发现，同时也可以作为配置中心。RocketMQ：阿里巴巴开源的分布式消息和流计算平台。Dubbo：阿里巴巴开源产品，高性能Java RPC框架，服务通信组件。Seata：阿里巴巴开源产品，一个易于使用的高性能微服务分布式事务解决方案。Alibaba Cloud ACM：其前身为淘宝内部配置中心Diamond，是一款应用配置中心产品，需付费。Alibaba Cloud OSS：阿里云对象存储OSS是一款海量、安全、低成本、高可靠的云存储服务，需付费。Alibaba Cloud SMS：阿里云短信服务，需付费。Alibaba Cloud SchedulerX：阿里中间件自研的基于Akka架构的新一代分布式任务调度平台，需付费。spring-cloud 和 spring-cloud-alibaba 的区别Spring Cloud：Spring 官方提供的分布式应用开发的一套共用模式，也可以理解成一套微服务开发的统一的抽象编程模型。Spring Cloud Netflix：基于 Spring Cloud 编程模型实现的微服务框架，是最早期的微服务框架。近年来，Netflix 宣布大多数组件停止维护。Spring Cloud Alibaba：Alibaba 提供的基于 Spring Cloud 编程模型实现的微服务框架，其所有组件都来自于阿里巴巴微服务技术，无论是解决方案完整性、技术成熟度、社区还是文档资料等都对国内开发者非常友好。spring-cloud是Spring官方提供的微服务开发工具。它基于Spring Boot构建，提供了一系列框架和工具帮助我们快速构建分布式系统中的微服务架构。spring-cloud主要包含以下组件:</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%BC%94%E8%BF%9B/featured.png" />
-    </item>
-    
-    <item>
-      <title>Eureka</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/eureka/</link>
-      <pubDate>Sat, 11 Nov 2023 23:55:26 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/eureka/</guid>
-      <description>整个项目很简单，主要需要注意版本的问题,这也是微服务的主要问题
-启动成功
-还是贴一下maven好
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;parent&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.0.2&amp;lt;/version&amp;gt; &amp;lt;relativePath/&amp;gt; &amp;lt;!-- lookup parent from repository --&amp;gt; &amp;lt;/parent&amp;gt; &amp;lt;groupId&amp;gt;com.example&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;eureka&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;name&amp;gt;eureka&amp;lt;/name&amp;gt; &amp;lt;description&amp;gt;eureka&amp;lt;/description&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;java.</description>
-      
-    </item>
-    
-    <item>
-      <title>写点脚本</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E6%8E%A8%E9%80%81%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Sat, 11 Nov 2023 23:55:26 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E6%8E%A8%E9%80%81%E7%AC%94%E8%AE%B0/</guid>
-      <description>懒得点点了，写个脚本维护笔记
-目前来看效果还行</description>
-      
-    </item>
-    
-    <item>
-      <title>搭建图床</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BA%8A/</link>
-      <pubDate>Fri, 03 Nov 2023 22:43:25 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BA%8A/</guid>
-      <description>通过GitHub+PicGo+CDN搭建自己的图床 #图床一般是指储存图片的服务器，有国内和国外之分。国外的图床由于有 空间距离等因素决定访问速度很慢影响图片显示速度。国内也分为单线空间、 多线空间和cdn加速三种。# CDN 是构建在数据网络上的一种分布式的内容分发网。 CDN 的作用是采用 流媒体服务器 集群技术，克服单机系统输出带宽及并发能力不足的缺点，可极大提升系统支持的 并发流数目，减少或避免 单点失效带来的不良影响。# github搭建仓库
-下载 PicGO 配置 CDN
-创建仓库 #PICGO #配置加速
-如何配置token？
-首先到github上选择生成自己的token：
-点击首页选择设置：
-下拉到develop settings
-选择下方生成GitHub token：</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E5%BA%8A/featured.png" />
-    </item>
-    
-    <item>
-      <title>Latex语法</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/latex/</link>
-      <pubDate>Thu, 19 Oct 2023 15:55:16 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/latex/</guid>
-      <description>环境设置： #\begin{center} \end{center} 这样就是一个环境，所有的都是隔离的。
-头部文件 #\documentclass{setting} \usepackage[utf8]{inputenc} \usepackage[T1]{fontenc} \usepackage{graphicx} \usepackage[]{setspace} 在头部设置文件排版样式，导入依赖包，基本在本地
-运行部分 #\begin{document} 选择合适的编译器才可以编译，否则出错
-导入自定义式样 #更新命令：texhash 式样文件的后缀：.cls文件，在里面自定义命令和样式实现排版布局
-例如下面：
-\newcommand{\role}[2]{ {\par \textit{#1} ~ #2 \par} \vspace{0.5ex} } \newcommand{\biInfo}[2]{ {#1 \quad #2} } \newcommand{\tripleInfo}[3]{ {#1 \quad #2 \quad #3} } </description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/latex/featured.png" />
-    </item>
-    
-    <item>
-      <title>状态机</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/vhdl/</link>
-      <pubDate>Thu, 12 Oct 2023 19:01:39 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/vhdl/</guid>
-      <description>有限状态机 #寄存器和组合时序逻辑电路构成硬件时序逻辑电路
-特点：只能在时钟沿发生跳变时才能完成状态转移，状态机可以在时钟跳变时完成复杂的任务。
-状态机的结构 #状态寄存器由一组寄存器构成,n个寄存器可存储2^n个状态
-输出取决于状态和输入时，这样的状态机称为Mealy状态机，只和当前状态有关的称为Moore状态机
-描述有限状态机的方法： always语句和case语句</description>
-      
-    </item>
-    
-    <item>
-      <title>如何通过hugo搭建自己的博客</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/</link>
-      <pubDate>Tue, 03 Oct 2023 23:44:01 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/</guid>
-      <description>如何通过Hugo这个框架来搭建一款属于自己的博客呢？ #观前提醒：这篇笔记借鉴了下面两个作者：
-一是：小棉尾巴
-事件契机 #我其实原本就知道github的pages自动部署博客功能，当时大二不熟练，今天目睹专业大佬的博客，自然也就重新搞起来了。
-如下就是大佬的博客（这个主题本来尝试用，后续发现比较花哨就不采用了）
-本人搭建的博客：
-第一步下载HuGo框架： #以Windows为例：只需打开CMD执行下面这个命令
-winget install Hugo.Hugo.Extended 等待下载完成重启Shell命令窗口即可，Hugo将会自动配置环境变量。
-检查是否安装成功：
-hugo version 第二部创建Hugo博客项目 #只需要在文件夹下面新建终端使用如下命令，hugo将会自动创建你的项目名称文件夹 ，同时弹出一个主题链接
-hugo new site +你的项目名称 现在你需要进入你的项目也就是命令： cd 你的项目名称</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>科学上网</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/vpn-ssr/</link>
-      <pubDate>Tue, 03 Oct 2023 22:43:25 +0800</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/vpn-ssr/</guid>
-      <description>先放一张跳墙成功的画面： #科学上网难吗？ #结论：很简单！！！
-首先是我在配置代理时候发现的几个好的站点：如下 #科学上网主要有两个代理方法，但实际内核应该是一样的：
-这里有关于两个不同的翻墙方法的说明链接 #第一个：
-第二个：
-参考链接：SSR配置说明 ssr链接方式
-如何翻墙啊，说了那么多。 #第一步：下载 #下载链接 蓝色款（不推荐，本文也不采用）：ShadowsocksR然后点击zip下载即可。ss的好处是没被墙，可以直接到git上下载。
-红色款（强烈推荐！！！）：这里我直接放上zip，因为国内无法下载，我已经提前翻墙下载好咯。 #下好后： #先复制下面的链接，然后点击ShadowssocksR-dotnet4.0.exe！！！！ #首先准备好ssr链接。这个方法最简单。 #ssr://Y20xLWhrLmh1dGFvbm9kZTIudG9wOjEyNDA1OmF1dGhfYWVzMTI4X3 NoYTE6Y2hhY2hhMjAtaWV0ZjpodHRwX3NpbXBsZTpTSFZVWVc5RGJHOTFaQS8_b 2Jmc3BhcmFtPU16WmhNV0V6TWpVd05TNXRhV055YjNOdlpuUXVZMjl0JnByb3RvcGFyYW0 9TXpJMU1EVTZTSEF6VlVVNE5YTmhWMjl2UjFOTlJnJnJlbWFya3M9NmFhWjVyaXZJQzBnU1VWUVRDQXRJ Rk5UTDFOVFVpQXRJREExJmdyb3VwPTVhU0g1NVNvVVZIdnZKb3pORFF6T1RVMk5qRXk 这里我们选择用SSR,影梭的粉红色飞机。</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/vpn-ssr/featured.png" />
-    </item>
-    
-    <item>
-      <title>Hello Friend</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/post/</link>
-      <pubDate>Fri, 03 Oct 2003 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/post/</guid>
-      <description>我的名字是春江花朝秋月夜，我是这个博客的作者。我这样做是为了记录之前学习的笔记，这样很有成就感。 我们都知道在网络上开始做一些事情有多难，尤其是现在。但是，为了自己的头发没有白掉，加油吧，大家！
-— 春江花朝秋月夜 S01E01</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/post/featured.png" />
-    </item>
-    
-    <item>
-      <title></title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/</guid>
-      <description>发誓： #本人将会参加校招和研究生考试中，为之努力！谦虚向学而不是三天打鱼两天晒网</description>
-      
-    </item>
-    
-    <item>
-      <title>博客统计</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/stats/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/stats/</guid>
-      <description>注1：同一文章可能包含多个分类，下同。 注2：山贼 是我的一个朋友。
-社交 #</description>
-      
-    </item>
-    
-    <item>
-      <title>封面测试</title>
-      <link>//localhost:1313/%E7%AC%94%E8%AE%B0/featured/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/%E7%AC%94%E8%AE%B0/featured/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/%E7%AC%94%E8%AE%B0/featured/featured.jpg" />
-    </item>
-    
-  </channel>
-</rss>
