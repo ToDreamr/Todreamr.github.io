@@ -872,7 +872,3 @@ select * from ... for update;
 
 https://zhuanlan.zhihu.com/p/48269420
 
-
-————————————————
-版权声明：本文为柏码知识库版权所有，禁止一切未经授权的转载、发布、出售等行为，违者将被追究法律责任。
-原文链接：https://www.itbaima.cn/document/vkpmw9wbej21nei6
