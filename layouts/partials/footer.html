@@ -1,7 +1,8 @@
 <!--浏览量-->
 <!-- busuanzi -->
 {{ if .Site.Params.busuanzi.enable -}}
-<div class="busuanzi-footer" style="margin-top: 40px">
+<div class="busuanzi-footer" style="margin-top:40px ;padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px ;height: 70px;
+font-family: 华文中宋,serif;">
   <span id="busuanzi_container_site_pv">
     本站总访问量<span id="busuanzi_value_site_pv"></span>次
   </span>
@@ -11,7 +12,8 @@
 </div>
 {{- end -}}
 
-<footer id="site-footer" class="py-10 print:hidden">
+<footer id="site-footer" class="py-10 print:hidden" style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px ;height: 70px;
+font-family: 华文中宋,serif;">
   {{/* Footer menu */}}
   {{ if .Site.Params.footer.showMenu | default true }}
     {{ if .Site.Menus.footer }}
