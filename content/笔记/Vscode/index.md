@@ -4,6 +4,7 @@ date: 2024-03-02T13:22:59+08:00
 draft: false
 description: "自用的Vscode个人觉得还算耐看的主题和字体以及编码习惯"
 tags: ["笔记"]
+authors: ["春江花朝秋月夜"]
 ---
 
 Java 选手为什么用 Vscode 了？

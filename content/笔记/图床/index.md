@@ -2,6 +2,7 @@
 title: "搭建图床"
 date : 2023-11-03T22:43:25+08:00
 tags: [ "杂记" ]
+authors: ["春江花朝秋月夜"]
 ---
 # 通过GitHub+PicGo+CDN搭建自己的图床
 

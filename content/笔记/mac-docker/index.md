@@ -3,6 +3,7 @@ title: "Mac-Dock"
 date: 2024-03-14T18:23:23+08:00
 description: "记录MyDockFinder"
 tags : ["笔记"]
+authors: ["春江花朝秋月夜"]
 ---
 
 经过我的不懈努力，RedmiBook终于变成了Mac Book⬇️⬇️

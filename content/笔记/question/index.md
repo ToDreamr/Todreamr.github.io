@@ -3,6 +3,8 @@ title: 人生的道路
 draft : false
 date : 2024-10-07T20:52:20+08:00
 series: ["面试"]
+authors: ["春江花朝秋月夜"]
+
 ---
 # Table
 

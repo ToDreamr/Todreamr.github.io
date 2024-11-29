@@ -3,6 +3,7 @@ title = 'Help'
 date = 2024-04-30T16:17:35+08:00
 draft = false
 tags = ["帮助文档"]
+authors= ["春江花朝秋月夜"]
 +++
 
 # 如何使用Hugo+Blowfish?

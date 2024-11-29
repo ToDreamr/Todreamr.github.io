@@ -4,6 +4,8 @@ date: 2024-02-07T19:22:59+08:00
 draft: false
 description: "关于本站音乐的搭建"
 tags: ["笔记"]
+authors: ["春江花朝秋月夜"]
+
 ---
 
 # 搭建本站音乐
