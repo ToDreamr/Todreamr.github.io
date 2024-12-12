@@ -7,10 +7,17 @@ author = "Rainy-Heights"
 # Hi ，你好！
 
 ![img](default.png)
-你好，我是春江花朝秋月夜，我是这个博客的作者。<br/>我这样做是为了记录之前学习的笔记 因为我基本很难记住我学过的东西....<br/>
-我关心后端技术，也喜欢做一些前端效果，我偶尔写一些笔记和心得并且定期分享到[哔哩哔哩](https://space.bilibili.com/159283119?spm_id_from=333.1007.0.0)和我的[语雀](https://www.yuque.com/chunjianghuazhaoqiuyueye)频道
-世界充满了很多不确定的东西，希望大家保持独立的思考。<br/>如果你好奇[我目前在做的事情](https://todreamr.github.io/tasks/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/),也可以了解更多[关于我](https://todreamr.github.io/about/)的信息。
+你好，我是春江花朝秋月夜，我是这个博客的作者。`<br/>`我这样做是为了记录之前学习的笔记 因为我基本很难记住我学过的东西....`<br/>`
+世界充满了很多不确定的东西，希望大家保持独立的思考。`<br/>`如果你好奇[我目前在做的事情](https://todreamr.github.io/tasks/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/),也可以了解更多[关于我](https://todreamr.github.io/about/)的信息。
 
+掌握的技术：
+
+* [X] Java，C/C++，Python
+* [X] React、Vue
+* [X] Javascript/TypeScript
+* [X] SpringBoot、SpringCloud 、Dubbo
+* [X] SQL，Redis，Zookeeper
+* [X] KafKa，RabbitMQ，MinIO
 
 这个博客网站在下面的支持下完成
 
@@ -22,8 +29,6 @@ author = "Rainy-Heights"
 所以，希望你在这儿可以玩的开心！！！
 
 ### 本人简历：
-
-107706430_p0_hu46370d4ccd3481872546da16224d0daa_1972225_288x288_fill_box_center_3
 
 {{% memo title=求职（长期有效） date=2024年3月09日 time=12:01 %}}
 ↘{{<download 许利伟-后端实习-2025届.pdf 本人简历>}}
